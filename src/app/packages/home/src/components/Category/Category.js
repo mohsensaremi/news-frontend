@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import NewsDesign1 from 'app/packages/news-design/src/containers/Design1';
+import CategoryNews from '../../renderers/CategoryNews';
+import LazyLoad from 'react-lazyload';
 
 const Category = (props) => {
     const {
         classes,
         title,
-        news,
+        id,
     } = props;
 
     return (
@@ -17,18 +18,11 @@ const Category = (props) => {
                     {title}
                 </Typography>
             </div>
-            {
-                news.edges.map(({node}) => {
-
-                    return (
-                        <NewsDesign1
-                            classes={{root:classes.news}}
-                            key={node.id}
-                            data={node}
-                        />
-                    );
-                })
-            }
+            <LazyLoad once height={410}>
+                <CategoryNews
+                    categoryId={id}
+                />
+            </LazyLoad>
         </div>
     );
 };

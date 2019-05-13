@@ -8,12 +8,4 @@ export default withStyles(theme => ({
         display: 'inline-block',
         marginBottom: theme.spacing.unit * 3 / 2,
     },
-    news: {
-        marginBottom: theme.spacing.unit,
-        borderRadius: theme.shape.borderRadiusButton,
-        transition: theme.variables.transition,
-        '&:hover': {
-            boxShadow: theme.shadows[3],
-        }
-    },
 }), {flip: false});
