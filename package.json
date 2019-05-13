@@ -1,0 +1,54 @@
+{
+  "name": "news-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "graphql": "^14.3.0",
+    "immutable": "^4.0.0-rc.12",
+    "jss": "^9.8.7",
+    "jss-rtl": "^0.2.3",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-jss": "^8.6.1",
+    "react-redux": "^7.0.3",
+    "react-relay": "^4.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.0"
+  },
+  "scripts": {
+    "relay-build": "relay-compiler --src ./src/ --schema ./schema.json",
+    "relay": "yarn relay-build && yarn relay-build --persist-output ./persisted-queries.json && yarn create-sha256-hash-for-relay-persist-query",
+    "create-sha256-hash-for-relay-persist-query": "node ./scripts/createSHA256HashForRelayPersistQuery.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.7.2",
+    "redux-devtools-extension": "^2.13.8",
+    "relay-compiler": "^4.0.0"
+  }
+}
