@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import 'app/style/app.scss';
+import 'app/fonts/IRANSans/css/fontiran.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Boot from './Boot';

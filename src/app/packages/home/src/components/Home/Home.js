@@ -10,18 +10,20 @@ const Home = (props) => {
     } = props;
 
     return (
-        <div className={classes.root}>
-            <Grid container spacing={24}>
-                {
-                    data.map(category => {
-                        return (
-                            <Grid item xs={12} md={6} key={category.id}>
-                                <Category data={category}/>
-                            </Grid>
-                        );
-                    })
-                }
-            </Grid>
+        <div className={'limitWidth'}>
+            <div className={classes.root}>
+                <Grid container spacing={24}>
+                    {
+                        data.map(category => {
+                            return (
+                                <Grid item xs={12} md={6} key={category.id}>
+                                    <Category data={category}/>
+                                </Grid>
+                            );
+                        })
+                    }
+                </Grid>
+            </div>
         </div>
     );
 };

@@ -1,4 +1,5 @@
 import {createMuiTheme} from '@material-ui/core/styles';
+import red from '@material-ui/core/colors/red';
 
 let theme = createMuiTheme({
     breakpoints: {
@@ -13,14 +14,11 @@ let theme = createMuiTheme({
     direction: 'rtl',
     palette: {
         primary: {
-            main: '#35b995',
-            contrastText: '#fff',
+            main: red['A400'],
+            light: red['A400'],
+            dark: red['A400'],
         },
-        secondary: {
-            main: '#4d70aa',
-            contrastText: '#fff',
-        },
-        success:{
+        success: {
             main: '#35b995',
             contrastText: '#fff',
         },
@@ -29,6 +27,11 @@ let theme = createMuiTheme({
         useNextVariants: true,
         fontFamily: 'IRANSans',
         fontSize: 12,
+        h2: {
+            fontWeight: 400,
+            fontSize: 18,
+            lineHeight: '28px',
+        },
     },
     shape: {
         borderRadius: 10,

@@ -3,6 +3,9 @@ import theme from 'app/themes/theme1';
 
 export default withStyles({
     '@global': {
+        "body": {
+            backgroundColor: theme.palette.background.default,
+        },
         ".inheritTypo": {
             fontSize: 'inherit',
             color: 'inherit',
