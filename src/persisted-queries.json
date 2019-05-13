@@ -1,1 +1,1 @@
-{}
+{"e29e7beb442619a45b2e022770555e30":{"sha256":"d11049febb31b223588afb9c318496e71c4e07379022523d8cee8d6b1e0fef88","query":"query HomeHomeQuery {\n  allCategories {\n    ...HomeHomeRelay_data\n    id\n  }\n}\n\nfragment HomeHomeRelay_data on Category {\n  id\n  ...HomeCategoryRelay_data\n}\n\nfragment HomeCategoryRelay_data on Category {\n  title\n}\n"}}

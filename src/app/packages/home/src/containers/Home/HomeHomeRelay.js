@@ -1,9 +1,12 @@
 import {createFragmentContainer, graphql} from 'react-relay';
 
 export default WrappedComponent => (
-    createFragmentContainer(WrappedComponent, graphql`
-        fragment HomeHomeRelay on Category @relay(plural:true) {
-            ...HomeCategoryRelay
+    createFragmentContainer(WrappedComponent, {
+        data: graphql`
+        fragment HomeHomeRelay_data on Category @relay(plural:true) {
+            id
+            ...HomeCategoryRelay_data
         }
-    `)
+    `
+    })
 )

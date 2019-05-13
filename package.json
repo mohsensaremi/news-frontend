@@ -11,6 +11,7 @@
     "jss-rtl": "^0.2.3",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
+    "react-app-rewired": "^2.1.3",
     "react-dom": "^16.8.6",
     "react-jss": "^8.6.1",
     "react-redux": "^7.0.3",
@@ -19,14 +20,15 @@
     "react-scripts": "3.0.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
-    "redux-form": "^8.2.0"
+    "redux-form": "^8.2.0",
+    "relay-runtime": "^4.0.0"
   },
   "scripts": {
     "relay-build": "relay-compiler --src ./src/ --schema ./schema.json",
     "relay": "yarn relay-build && yarn relay-build --persist-output ./persisted-queries.json && yarn create-sha256-hash-for-relay-persist-query",
     "create-sha256-hash-for-relay-persist-query": "node ./scripts/createSHA256HashForRelayPersistQuery.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,7 +48,10 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-relay": "^4.0.0",
     "babel-polyfill": "^6.26.0",
+    "customize-cra": "^0.2.12",
+    "i": "^0.3.6",
     "prop-types": "^15.7.2",
     "redux-devtools-extension": "^2.13.8",
     "relay-compiler": "^4.0.0"

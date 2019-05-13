@@ -11,7 +11,7 @@ const fetchData = (body) => {
         }
     }
 
-    return fetch(process.env.GRAPHQL_URL, {
+    return fetch(process.env.REACT_APP_GRAPHQL_URL, {
         method: 'POST',
         headers,
         body: JSON.stringify(body),
