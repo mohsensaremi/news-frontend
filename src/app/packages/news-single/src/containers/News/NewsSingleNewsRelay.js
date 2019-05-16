@@ -3,11 +3,11 @@ import {createFragmentContainer, graphql} from 'react-relay';
 export default WrappedComponent => (
     createFragmentContainer(WrappedComponent, {
         data: graphql`
-        fragment NewsDesignDesign1Relay_data on News {
+        fragment NewsSingleNewsRelay_data on News {
+            id
             title
-            sourceName
-            abstract
-            link
+            image
+            content
         }
     `
     })
