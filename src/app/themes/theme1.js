@@ -1,5 +1,6 @@
 import {createMuiTheme} from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
+import blue from '@material-ui/core/colors/blue';
 
 let theme = createMuiTheme({
     breakpoints: {
@@ -27,10 +28,18 @@ let theme = createMuiTheme({
         useNextVariants: true,
         fontFamily: 'IRANSans',
         fontSize: 12,
+        h1: {
+            fontWeight: 500,
+            fontSize: 22,
+            lineHeight: '28px',
+        },
         h2: {
             fontWeight: 400,
             fontSize: 18,
             lineHeight: '28px',
+        },
+        body1: {
+            lineHeight: '24px',
         },
     },
     shape: {
@@ -45,6 +54,7 @@ theme = {
     variable: {
         maxWidth: 1100,
         shadow: theme.shadows[1],
+        linkColor: blue[500],
         transition: theme.transitions.create('all', {
             duration: theme.transitions.duration.shortest,
         }),

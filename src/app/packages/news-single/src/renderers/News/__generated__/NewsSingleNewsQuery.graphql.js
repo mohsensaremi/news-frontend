@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 4ea56cd312d3b7e0c868fbeb80ec410a
+ * @relayHash 89aabd4f830028b40e06edcee3a5a7ae
  */
 
 /* eslint-disable */
@@ -40,6 +40,11 @@ fragment NewsSingleNewsRelay_data on News {
   title
   image
   content
+  sourceUrl
+  sourceName
+  tagsTitle
+  categoriesTitle
+  pubDate
 }
 */
 
@@ -127,6 +132,41 @@ return {
             "name": "content",
             "args": null,
             "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "sourceUrl",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "sourceName",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "tagsTitle",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "categoriesTitle",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "pubDate",
+            "args": null,
+            "storageKey": null
           }
         ]
       }
@@ -135,7 +175,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "bf5b6f49281d2bfa9f89216dfbccd791",
+    "id": "28e5fbe221fa83329c7aca82ca7151b7",
     "text": null,
     "metadata": {}
   }

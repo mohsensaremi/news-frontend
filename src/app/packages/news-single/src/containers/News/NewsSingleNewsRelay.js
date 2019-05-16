@@ -8,6 +8,11 @@ export default WrappedComponent => (
             title
             image
             content
+            sourceUrl
+            sourceName
+            tagsTitle
+            categoriesTitle
+            pubDate
         }
     `
     })

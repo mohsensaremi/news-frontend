@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
+import JsxRenderer from 'utils/components/JsxRenderer';
+import {Link} from "react-router-dom";
 
 const News = (props) => {
     const {
         classes,
-        data,
+        title,
+        image,
+        content,
+        pubDate,
+        sourceUrl,
+        sourceName,
+        tagsTitle,
+        // categoriesTitle,
     } = props;
 
     return (
@@ -13,7 +24,68 @@ const News = (props) => {
             <div className={classes.root}>
                 <Grid container spacing={16}>
                     <Grid item xs={12} md={9}>
-                        main
+                        <Paper className={classes.bodyPaper}>
+                            <Typography
+                                component={"h1"}
+                                variant={"h1"}
+                                className={classes.title}
+                            >
+                                {title}
+                            </Typography>
+                            <Typography
+                                variant={"subtitle1"}
+                                className={classes.date}
+                            >
+                                {pubDate}
+                            </Typography>
+                            <img
+                                src={image}
+                                className={classes.image}
+                            />
+                            <JsxRenderer
+                                jsx={`<div className="${classes.content}">${content}</div>`}
+                            />
+                            {
+                                tagsTitle.length > 0 && (
+                                    <div className={classes.tagList}>
+                                        {
+                                            tagsTitle.map(tag => {
+
+                                                return (
+                                                    <Typography
+                                                        key={tag}
+                                                        variant={"body1"}
+                                                        className={classes.tagItem}
+                                                        component={Link}
+                                                        to={`/tags/${tag}`}
+                                                        target={"_blank"}
+                                                    >
+                                                        {`#${tag}`}
+                                                    </Typography>
+                                                );
+                                            })
+                                        }
+                                    </div>
+                                )
+                            }
+                            <Typography
+                                className={classes.source}
+                                variant={"body1"}
+                            >
+                                منبع:
+                                <Typography
+                                    className={classes.sourceName}
+                                    variant={"body1"}
+                                    component={"a"}
+                                    target={"_blank"}
+                                    href={sourceUrl}
+                                    inline
+                                    color={"primary"}
+                                >
+                                    {sourceName}
+                                </Typography>
+                            </Typography>
+                        </Paper>
                     </Grid>
                     <Grid item xs={12} md={3}>
                         sidebar
