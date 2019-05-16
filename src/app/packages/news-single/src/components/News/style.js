@@ -3,8 +3,11 @@ import withStyles from '@material-ui/core/styles/withStyles';
 export default withStyles(theme => ({
     title: {},
     date: {
-        marginBottom: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit,
         textAlign: 'left',
+    },
+    abstract: {
+        marginBottom: theme.spacing.unit * 2,
     },
     image: {
         marginBottom: theme.spacing.unit,

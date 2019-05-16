@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 4cb0ea22addf980b6726381974b3e56b
+ * @relayHash 06f795371889fda4a22283c29e83681c
  */
 
 /* eslint-disable */
@@ -41,6 +41,7 @@ fragment NewsSingleNewsRelay_data on News {
   image
   content
   refUrl
+  abstract
   source {
     title
     ...NewsSingleSourceCardRelay_data
@@ -195,6 +196,13 @@ return {
             "args": null,
             "storageKey": null
           },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "abstract",
+            "args": null,
+            "storageKey": null
+          },
           (v4/*: any*/),
           {
             "kind": "ScalarField",
@@ -280,7 +288,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "1c8ba40863c7dffab0d8750ae8f51b71",
+    "id": "a495c6489e571044f615e1c42be4579b",
     "text": null,
     "metadata": {}
   }

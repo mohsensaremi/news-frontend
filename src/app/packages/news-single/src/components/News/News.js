@@ -18,6 +18,7 @@ const News = (props) => {
         refUrl,
         source,
         tagsTitle,
+        abstract,
         // categoriesTitle,
         data,
     } = props;
@@ -42,6 +43,16 @@ const News = (props) => {
                             >
                                 {pubDate}
                             </Typography>
+                            {
+                                abstract && (
+                                    <Typography
+                                        variant={"subtitle1"}
+                                        className={classes.abstract}
+                                    >
+                                        {abstract}
+                                    </Typography>
+                                )
+                            }
                             <img
                                 src={image}
                                 className={classes.image}
@@ -94,11 +105,11 @@ const News = (props) => {
                     <Grid item xs={12} md={3}>
                         <SourceCard
                             data={data.source}
-                            classes={{root:classes.sidebarItem}}
+                            classes={{root: classes.sidebarItem}}
                         />
                         <RelatedNews
                             data={data.category.news}
-                            classes={{root:classes.sidebarItem}}
+                            classes={{root: classes.sidebarItem}}
                         />
                     </Grid>
                 </Grid>

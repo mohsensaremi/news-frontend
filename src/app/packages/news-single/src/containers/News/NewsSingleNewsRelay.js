@@ -9,6 +9,7 @@ export default WrappedComponent => (
             image
             content
             refUrl
+            abstract
             source {
                 title
                 ...NewsSingleSourceCardRelay_data

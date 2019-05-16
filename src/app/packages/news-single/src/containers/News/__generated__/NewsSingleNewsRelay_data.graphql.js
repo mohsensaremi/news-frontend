@@ -19,6 +19,7 @@ export type NewsSingleNewsRelay_data = {|
   +image: string,
   +content: string,
   +refUrl: string,
+  +abstract: string,
   +source: {|
     +title: string,
     +$fragmentRefs: NewsSingleSourceCardRelay_data$ref,
@@ -82,6 +83,13 @@ return {
       "kind": "ScalarField",
       "alias": null,
       "name": "refUrl",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "abstract",
       "args": null,
       "storageKey": null
     },
@@ -160,5 +168,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '59da80ab225f8af255fd6cc4e9a3db79';
+(node/*: any*/).hash = '88d7e31e92f3a81606f5ede61a01aa2e';
 module.exports = node;
