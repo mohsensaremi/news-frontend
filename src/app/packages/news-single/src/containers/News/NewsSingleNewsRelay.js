@@ -8,11 +8,19 @@ export default WrappedComponent => (
             title
             image
             content
-            sourceUrl
-            sourceName
+            refUrl
+            source {
+                title
+                ...NewsSingleSourceCardRelay_data
+            }
             tagsTitle
             categoriesTitle
             pubDate
+            category {
+                news(first:10) {
+                    ...NewsSingleRelatedNewsRelay_data
+                }
+            }
         }
     `
     })

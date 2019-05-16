@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 89aabd4f830028b40e06edcee3a5a7ae
+ * @relayHash 4cb0ea22addf980b6726381974b3e56b
  */
 
 /* eslint-disable */
@@ -40,10 +40,43 @@ fragment NewsSingleNewsRelay_data on News {
   title
   image
   content
-  sourceUrl
-  sourceName
+  refUrl
+  source {
+    title
+    ...NewsSingleSourceCardRelay_data
+    id
+  }
   tagsTitle
   categoriesTitle
+  pubDate
+  category {
+    news(first: 10) {
+      ...NewsSingleRelatedNewsRelay_data
+    }
+    id
+  }
+}
+
+fragment NewsSingleSourceCardRelay_data on NewsSource {
+  title
+}
+
+fragment NewsSingleRelatedNewsRelay_data on NewsConnection {
+  edges {
+    node {
+      id
+      ...NewsDesignDesign2Relay_data
+    }
+  }
+}
+
+fragment NewsDesignDesign2Relay_data on News {
+  title
+  source {
+    title
+    id
+  }
+  link
   pubDate
 }
 */
@@ -63,7 +96,41 @@ v1 = [
     "name": "id",
     "variableName": "id"
   }
-];
+],
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v3 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "title",
+  "args": null,
+  "storageKey": null
+},
+v4 = {
+  "kind": "LinkedField",
+  "alias": null,
+  "name": "source",
+  "storageKey": null,
+  "args": null,
+  "concreteType": "NewsSource",
+  "plural": false,
+  "selections": [
+    (v3/*: any*/),
+    (v2/*: any*/)
+  ]
+},
+v5 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "pubDate",
+  "args": null,
+  "storageKey": null
+};
 return {
   "kind": "Request",
   "fragment": {
@@ -105,20 +172,8 @@ return {
         "concreteType": "News",
         "plural": false,
         "selections": [
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "id",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "title",
-            "args": null,
-            "storageKey": null
-          },
+          (v2/*: any*/),
+          (v3/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -136,17 +191,11 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
-            "name": "sourceUrl",
+            "name": "refUrl",
             "args": null,
             "storageKey": null
           },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "sourceName",
-            "args": null,
-            "storageKey": null
-          },
+          (v4/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -161,12 +210,68 @@ return {
             "args": null,
             "storageKey": null
           },
+          (v5/*: any*/),
           {
-            "kind": "ScalarField",
+            "kind": "LinkedField",
             "alias": null,
-            "name": "pubDate",
+            "name": "category",
+            "storageKey": null,
             "args": null,
-            "storageKey": null
+            "concreteType": "Category",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "news",
+                "storageKey": "news(first:10)",
+                "args": [
+                  {
+                    "kind": "Literal",
+                    "name": "first",
+                    "value": 10
+                  }
+                ],
+                "concreteType": "NewsConnection",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "name": "edges",
+                    "storageKey": null,
+                    "args": null,
+                    "concreteType": "NewsEdge",
+                    "plural": true,
+                    "selections": [
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "name": "node",
+                        "storageKey": null,
+                        "args": null,
+                        "concreteType": "News",
+                        "plural": false,
+                        "selections": [
+                          (v2/*: any*/),
+                          (v3/*: any*/),
+                          (v4/*: any*/),
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "name": "link",
+                            "args": null,
+                            "storageKey": null
+                          },
+                          (v5/*: any*/)
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              (v2/*: any*/)
+            ]
           }
         ]
       }
@@ -175,7 +280,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "28e5fbe221fa83329c7aca82ca7151b7",
+    "id": "1c8ba40863c7dffab0d8750ae8f51b71",
     "text": null,
     "metadata": {}
   }

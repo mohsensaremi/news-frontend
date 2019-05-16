@@ -9,7 +9,7 @@ const Design1 = (props) => {
     const {
         classes,
         title,
-        sourceName,
+        source,
         abstract,
         link,
     } = props;
@@ -22,7 +22,7 @@ const Design1 = (props) => {
                         {title}
                     </Typography>
                     <Typography variant="caption" className={classes.sourceName}>
-                        {sourceName}
+                        {source.title}
                     </Typography>
                 </Paper>
             </Link>

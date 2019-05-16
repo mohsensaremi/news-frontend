@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import JsxRenderer from 'utils/components/JsxRenderer';
 import {Link} from "react-router-dom";
+import SourceCard from '../../containers/SourceCard';
+import RelatedNews from '../../containers/RelatedNews';
 
 const News = (props) => {
     const {
@@ -13,10 +15,11 @@ const News = (props) => {
         image,
         content,
         pubDate,
-        sourceUrl,
-        sourceName,
+        refUrl,
+        source,
         tagsTitle,
         // categoriesTitle,
+        data,
     } = props;
 
     return (
@@ -35,6 +38,7 @@ const News = (props) => {
                             <Typography
                                 variant={"subtitle1"}
                                 className={classes.date}
+                                color="textSecondary"
                             >
                                 {pubDate}
                             </Typography>
@@ -78,17 +82,24 @@ const News = (props) => {
                                     variant={"body1"}
                                     component={"a"}
                                     target={"_blank"}
-                                    href={sourceUrl}
+                                    href={refUrl}
                                     inline
                                     color={"primary"}
                                 >
-                                    {sourceName}
+                                    {source.title}
                                 </Typography>
                             </Typography>
                         </Paper>
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        sidebar
+                        <SourceCard
+                            data={data.source}
+                            classes={{root:classes.sidebarItem}}
+                        />
+                        <RelatedNews
+                            data={data.category.news}
+                            classes={{root:classes.sidebarItem}}
+                        />
                     </Grid>
                 </Grid>
             </div>

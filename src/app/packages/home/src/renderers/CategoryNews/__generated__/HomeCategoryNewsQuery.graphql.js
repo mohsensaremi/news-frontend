@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 5596e2b064f9dc33425f7a140dabb14b
+ * @relayHash d39847f076f40542d99df983b09ac6e9
  */
 
 /* eslint-disable */
@@ -48,7 +48,10 @@ fragment HomeCategoryNewsRelay_data on Category {
 
 fragment NewsDesignDesign1Relay_data on News {
   title
-  sourceName
+  source {
+    title
+    id
+  }
   abstract
   link
 }
@@ -74,6 +77,13 @@ v2 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v3 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "title",
   "args": null,
   "storageKey": null
 };
@@ -152,19 +162,19 @@ return {
                     "plural": false,
                     "selections": [
                       (v2/*: any*/),
+                      (v3/*: any*/),
                       {
-                        "kind": "ScalarField",
+                        "kind": "LinkedField",
                         "alias": null,
-                        "name": "title",
+                        "name": "source",
+                        "storageKey": null,
                         "args": null,
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "sourceName",
-                        "args": null,
-                        "storageKey": null
+                        "concreteType": "NewsSource",
+                        "plural": false,
+                        "selections": [
+                          (v3/*: any*/),
+                          (v2/*: any*/)
+                        ]
                       },
                       {
                         "kind": "ScalarField",
@@ -194,7 +204,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "HomeCategoryNewsQuery",
-    "id": "276ef90123085e7ed55e5ed9b826bc0b",
+    "id": "8d6b8d7c72a5bdc5ee0e1d1333e14a34",
     "text": null,
     "metadata": {}
   }

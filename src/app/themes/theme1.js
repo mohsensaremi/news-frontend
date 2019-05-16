@@ -41,6 +41,10 @@ let theme = createMuiTheme({
         body1: {
             lineHeight: '24px',
         },
+        button: {
+            fontSize: 12,
+            fontWeight:'normal'
+        },
     },
     shape: {
         borderRadius: 10,
@@ -74,6 +78,16 @@ theme = {
         MuiTab: {
             textColorInherit: {
                 opacity: 1
+            },
+        },
+        MuiPaper: {
+            rounded: {
+                overflow: 'hidden',
+            },
+        },
+        MuiButton: {
+            root: {
+                borderRadius: theme.shape.borderRadiusButton,
             },
         },
     },
