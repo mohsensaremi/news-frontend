@@ -1,12 +1,18 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 
 export default withStyles(theme => ({
-    root:{
+    root: {
         '& a:last-child $news': {
             marginBottom: 0,
         },
     },
-    news:{
-        marginBottom:theme.spacing.unit,
+    title: {
+        marginBottom: theme.spacing.unit,
+        paddingBottom: theme.spacing.unit / 2,
+        display: 'inline-block',
+        borderBottom: `1px solid ${theme.palette.primary.main}`,
+    },
+    news: {
+        marginBottom: theme.spacing.unit,
     },
 }), {flip: false});

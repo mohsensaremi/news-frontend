@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 06f795371889fda4a22283c29e83681c
+ * @relayHash 199a937bafadc412008cc37cc35fd2e6
  */
 
 /* eslint-disable */
@@ -51,9 +51,7 @@ fragment NewsSingleNewsRelay_data on News {
   categoriesTitle
   pubDate
   category {
-    news(first: 10) {
-      ...NewsSingleRelatedNewsRelay_data
-    }
+    ...NewsSingleRelatedNewsRelay_data
     id
   }
 }
@@ -62,11 +60,14 @@ fragment NewsSingleSourceCardRelay_data on NewsSource {
   title
 }
 
-fragment NewsSingleRelatedNewsRelay_data on NewsConnection {
-  edges {
-    node {
-      id
-      ...NewsDesignDesign2Relay_data
+fragment NewsSingleRelatedNewsRelay_data on Category {
+  title
+  news(first: 10) {
+    edges {
+      node {
+        id
+        ...NewsDesignDesign2Relay_data
+      }
     }
   }
 }
@@ -228,6 +229,7 @@ return {
             "concreteType": "Category",
             "plural": false,
             "selections": [
+              (v3/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -288,7 +290,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "a495c6489e571044f615e1c42be4579b",
+    "id": "47cf1ff1f84490f65e8f22d4cb6c3bbe",
     "text": null,
     "metadata": {}
   }

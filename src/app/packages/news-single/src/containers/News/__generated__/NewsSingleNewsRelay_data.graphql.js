@@ -28,9 +28,7 @@ export type NewsSingleNewsRelay_data = {|
   +categoriesTitle: $ReadOnlyArray<?string>,
   +pubDate: string,
   +category: {|
-    +news: {|
-      +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref
-    |}
+    +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref
   |},
   +$refType: NewsSingleNewsRelay_data$ref,
 |};
@@ -141,26 +139,9 @@ return {
       "plural": false,
       "selections": [
         {
-          "kind": "LinkedField",
-          "alias": null,
-          "name": "news",
-          "storageKey": "news(first:10)",
-          "args": [
-            {
-              "kind": "Literal",
-              "name": "first",
-              "value": 10
-            }
-          ],
-          "concreteType": "NewsConnection",
-          "plural": false,
-          "selections": [
-            {
-              "kind": "FragmentSpread",
-              "name": "NewsSingleRelatedNewsRelay_data",
-              "args": null
-            }
-          ]
+          "kind": "FragmentSpread",
+          "name": "NewsSingleRelatedNewsRelay_data",
+          "args": null
         }
       ]
     }
@@ -168,5 +149,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '88d7e31e92f3a81606f5ede61a01aa2e';
+(node/*: any*/).hash = '0df4b5ca75921447dd1ee1e537ba352c';
 module.exports = node;

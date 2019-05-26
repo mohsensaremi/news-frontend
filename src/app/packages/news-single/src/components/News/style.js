@@ -42,6 +42,6 @@ export default withStyles(theme => ({
         marginRight: 4,
     },
     sidebarItem: {
-        marginBottom: theme.spacing.unit,
+        marginBottom: theme.spacing.unit * 2,
     },
 }), {flip: false});

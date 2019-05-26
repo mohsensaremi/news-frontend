@@ -108,7 +108,7 @@ const News = (props) => {
                             classes={{root: classes.sidebarItem}}
                         />
                         <RelatedNews
-                            data={data.category.news}
+                            data={data.category}
                             classes={{root: classes.sidebarItem}}
                         />
                     </Grid>
