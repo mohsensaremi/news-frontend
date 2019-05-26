@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import JsxRenderer from 'utils/components/JsxRenderer';
+import {SetGlobalState} from 'packages/global-state';
 import {Link} from "react-router-dom";
 import SourceCard from '../../containers/SourceCard';
 import RelatedNews from '../../containers/RelatedNews';
@@ -21,10 +22,15 @@ const News = (props) => {
         abstract,
         // categoriesTitle,
         data,
+        category,
     } = props;
 
     return (
         <div className={'limitWidth'}>
+            <SetGlobalState
+                itemKey={"activeCategoryId"}
+                itemValue={category.id}
+            />
             <div className={classes.root}>
                 <Grid container spacing={16}>
                     <Grid item xs={12} md={9}>

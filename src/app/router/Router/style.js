@@ -17,4 +17,7 @@ export default withStyles({
             margin: 'auto',
         },
     },
+    toolbar: {
+        marginBottom: theme.spacing.unit * 4,
+    },
 });

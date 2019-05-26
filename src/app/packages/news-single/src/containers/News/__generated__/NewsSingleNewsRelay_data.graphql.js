@@ -28,7 +28,8 @@ export type NewsSingleNewsRelay_data = {|
   +categoriesTitle: $ReadOnlyArray<?string>,
   +pubDate: string,
   +category: {|
-    +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref
+    +id: string,
+    +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref,
   |},
   +$refType: NewsSingleNewsRelay_data$ref,
 |};
@@ -44,6 +45,13 @@ const node/*: ReaderFragment*/ = (function(){
 var v0 = {
   "kind": "ScalarField",
   "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+},
+v1 = {
+  "kind": "ScalarField",
+  "alias": null,
   "name": "title",
   "args": null,
   "storageKey": null
@@ -55,14 +63,8 @@ return {
   "metadata": null,
   "argumentDefinitions": [],
   "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "id",
-      "args": null,
-      "storageKey": null
-    },
     (v0/*: any*/),
+    (v1/*: any*/),
     {
       "kind": "ScalarField",
       "alias": null,
@@ -100,7 +102,7 @@ return {
       "concreteType": "NewsSource",
       "plural": false,
       "selections": [
-        (v0/*: any*/),
+        (v1/*: any*/),
         {
           "kind": "FragmentSpread",
           "name": "NewsSingleSourceCardRelay_data",
@@ -138,6 +140,7 @@ return {
       "concreteType": "Category",
       "plural": false,
       "selections": [
+        (v0/*: any*/),
         {
           "kind": "FragmentSpread",
           "name": "NewsSingleRelatedNewsRelay_data",
@@ -149,5 +152,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '0df4b5ca75921447dd1ee1e537ba352c';
+(node/*: any*/).hash = '2fdef3157e7f562a45dd2b055c3ec22c';
 module.exports = node;

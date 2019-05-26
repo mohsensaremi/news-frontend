@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 199a937bafadc412008cc37cc35fd2e6
+ * @relayHash e138cce7f9b34c21900a3be292bc445f
  */
 
 /* eslint-disable */
@@ -51,8 +51,8 @@ fragment NewsSingleNewsRelay_data on News {
   categoriesTitle
   pubDate
   category {
-    ...NewsSingleRelatedNewsRelay_data
     id
+    ...NewsSingleRelatedNewsRelay_data
   }
 }
 
@@ -229,6 +229,7 @@ return {
             "concreteType": "Category",
             "plural": false,
             "selections": [
+              (v2/*: any*/),
               (v3/*: any*/),
               {
                 "kind": "LinkedField",
@@ -279,8 +280,7 @@ return {
                     ]
                   }
                 ]
-              },
-              (v2/*: any*/)
+              }
             ]
           }
         ]
@@ -290,7 +290,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "47cf1ff1f84490f65e8f22d4cb6c3bbe",
+    "id": "f888a258c6866464c11255b8fda930cd",
     "text": null,
     "metadata": {}
   }
