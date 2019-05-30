@@ -2,7 +2,9 @@ import {connect} from "react-redux";
 import {open} from 'packages/dialog';
 
 export default connect(
-    null,
+    store => ({
+        user: store.globalState.get('user', null),
+    }),
     dispatch => ({
         openAuthDialog: () => dispatch(open('auth')),
     })

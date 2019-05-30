@@ -11,22 +11,29 @@ const Toolbar = (props) => {
     const {
         classes,
         openAuthDialog,
+        user,
     } = props;
 
     return (
         <div className={classes.root}>
             <AppBar position="static" color="inherit">
                 <MuiToolbar classes={{
-                    root:classes.toolbar,
+                    root: classes.toolbar,
                 }}>
                     <ToolbarItems/>
                     <Button
-                        variant={"contained"}
+                        variant={user ? "outlined" : "contained"}
                         color={"primary"}
                         onClick={openAuthDialog}
                     >
                         حساب کاربری
-                        <PersonOutlineIcon className={classes.authButtonIcon}/>
+                        {
+                            user ? (
+                                <PersonIcon className={classes.authButtonIcon}/>
+                            ) : (
+                                <PersonOutlineIcon className={classes.authButtonIcon}/>
+                            )
+                        }
                     </Button>
                 </MuiToolbar>
             </AppBar>

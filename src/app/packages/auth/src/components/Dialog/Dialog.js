@@ -5,6 +5,7 @@ import MuiDialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import {Field} from "redux-form";
 
 const Dialog = (props) => {
 
@@ -25,14 +26,16 @@ const Dialog = (props) => {
         >
             <DialogTitle id="form-dialog-title">ورود / ثبت نام</DialogTitle>
             <DialogContent>
-                <TextField
+                <Field
+                    component={TextField}
                     margin="dense"
                     label="ایمیل"
                     type="email"
                     name="email"
                     fullWidth
                 />
-                <TextField
+                <Field
+                    component={TextField}
                     margin="dense"
                     label="کلمه عبور"
                     type="password"

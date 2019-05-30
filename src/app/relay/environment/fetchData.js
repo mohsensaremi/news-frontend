@@ -5,7 +5,7 @@ const fetchData = (body) => {
         'Content-Type': 'application/json'
     };
     if (typeof window !== "undefined") {
-        const authorization = window.localStorage.getItem('membersAccessToken');
+        const authorization = window.localStorage.getItem('userToken');
         if (authorization) {
             headers.authorization = `Bearer ${authorization}`;
         }
@@ -16,6 +16,10 @@ const fetchData = (body) => {
         headers,
         body: JSON.stringify(body),
     }).then(response => {
+        const newToken = response.headers.get('x-authorization-updated');
+        if (newToken) {
+            window.localStorage.setItem('userToken', newToken);
+        }
         return response.json()
     });
 };
