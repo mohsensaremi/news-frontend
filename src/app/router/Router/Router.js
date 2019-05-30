@@ -6,6 +6,7 @@ import theme from 'app/themes/theme1';
 import Toolbar from 'app/packages/toolbar/src/containers/Toolbar';
 import Home from 'app/packages/home/src/renderers/Home';
 import News from 'app/packages/news-single/src/renderers/News';
+import AuthDialog from 'app/packages/auth/src/containers/Dialog';
 
 const Router = (props) => {
 
@@ -24,6 +25,7 @@ const Router = (props) => {
                 <Route exact path={`/news/:id`} component={News}/>
                 <Route path={`/`} component={Home}/>
             </Switch>
+            <AuthDialog/>
             <Toast/>
         </MuiThemeProvider>
     );

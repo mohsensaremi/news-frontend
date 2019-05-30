@@ -2,18 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
+import PersonIcon from '@material-ui/icons/AccountCircle';
+import PersonOutlineIcon from '@material-ui/icons/AccountCircleOutlined';
 import ToolbarItems from '../../renderers/ToolbarItems';
 
 const Toolbar = (props) => {
     const {
         classes,
+        openAuthDialog,
     } = props;
 
     return (
         <div className={classes.root}>
             <AppBar position="static" color="inherit">
-                <MuiToolbar>
-                        <ToolbarItems/>
+                <MuiToolbar classes={{
+                    root:classes.toolbar,
+                }}>
+                    <ToolbarItems/>
+                    <Button
+                        variant={"contained"}
+                        color={"primary"}
+                        onClick={openAuthDialog}
+                    >
+                        حساب کاربری
+                        <PersonOutlineIcon className={classes.authButtonIcon}/>
+                    </Button>
                 </MuiToolbar>
             </AppBar>
         </div>
