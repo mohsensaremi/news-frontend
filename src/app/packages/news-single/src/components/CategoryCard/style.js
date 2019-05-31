@@ -32,7 +32,7 @@ export default withStyles(theme => ({
         fontSize: 14,
         fontWeight: 'bold',
     },
-    button:{
-        padding:`0 ${theme.spacing.unit}px`,
+    button: {
+        padding: `2px ${theme.spacing.unit}px`,
     },
 }), {flip: false});

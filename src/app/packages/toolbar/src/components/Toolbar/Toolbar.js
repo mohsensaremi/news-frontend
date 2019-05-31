@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 import PersonIcon from '@material-ui/icons/AccountCircle';
 import PersonOutlineIcon from '@material-ui/icons/AccountCircleOutlined';
 import ToolbarItems from '../../renderers/ToolbarItems';
+import {
+    usePopupState,
+    bindTrigger,
+    bindMenu,
+} from 'material-ui-popup-state/hooks'
 
 const Toolbar = (props) => {
     const {
@@ -13,6 +20,16 @@ const Toolbar = (props) => {
         openAuthDialog,
         user,
     } = props;
+
+    const popupState = usePopupState({variant: 'popover', popupId: 'toolbarAuthButtonMenu'});
+    let buttonProps = {};
+    if (user) {
+        buttonProps = bindTrigger(popupState);
+    } else {
+        buttonProps = {
+            onClick: openAuthDialog,
+        };
+    }
 
     return (
         <div className={classes.root}>
@@ -24,9 +41,11 @@ const Toolbar = (props) => {
                     <Button
                         variant={user ? "outlined" : "contained"}
                         color={"primary"}
-                        onClick={openAuthDialog}
+                        {...buttonProps}
                     >
-                        حساب کاربری
+                        {
+                            user ? (user.get('email')) : ('حساب کاربری')
+                        }
                         {
                             user ? (
                                 <PersonIcon className={classes.authButtonIcon}/>
@@ -35,6 +54,20 @@ const Toolbar = (props) => {
                             )
                         }
                     </Button>
+                    <Menu
+                        {...bindMenu(popupState)}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                        getContentAnchorEl={null}
+                    >
+                        <MenuItem onClick={popupState.close}>خروج</MenuItem>
+                    </Menu>
                 </MuiToolbar>
             </AppBar>
         </div>

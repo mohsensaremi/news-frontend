@@ -12,9 +12,6 @@ const RelatedNews = (props) => {
 
     return (
         <div className={classes.root}>
-            <Typography variant="subtitle1" className={classes.title}>
-                {`آخرین اخبار ${title}`}
-            </Typography>
             {
                 news.edges.map(({node}) => {
                     return (

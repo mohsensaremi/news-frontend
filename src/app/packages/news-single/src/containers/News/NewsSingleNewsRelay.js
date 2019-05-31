@@ -12,7 +12,6 @@ export default WrappedComponent => (
             abstract
             source {
                 title
-                ...NewsSingleSourceCardRelay_data
             }
             tagsTitle
             categoriesTitle
@@ -20,6 +19,7 @@ export default WrappedComponent => (
             category {
                 id
                 ...NewsSingleRelatedNewsRelay_data
+                ...NewsSingleCategoryCardRelay_data
             }
         }
     `

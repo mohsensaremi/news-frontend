@@ -13,7 +13,6 @@ import type { FragmentReference } from "relay-runtime";
 declare export opaque type NewsSingleRelatedNewsRelay_data$ref: FragmentReference;
 declare export opaque type NewsSingleRelatedNewsRelay_data$fragmentType: NewsSingleRelatedNewsRelay_data$ref;
 export type NewsSingleRelatedNewsRelay_data = {|
-  +title: string,
   +news: {|
     +edges: ?$ReadOnlyArray<?{|
       +node: ?{|
@@ -39,13 +38,6 @@ const node/*: ReaderFragment*/ = {
   "metadata": null,
   "argumentDefinitions": [],
   "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "title",
-      "args": null,
-      "storageKey": null
-    },
     {
       "kind": "LinkedField",
       "alias": null,
@@ -100,5 +92,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = 'c69812dccc19e30c95f51f4515acc1e9';
+(node/*: any*/).hash = '2503dc8223cea989c336dce75be68187';
 module.exports = node;

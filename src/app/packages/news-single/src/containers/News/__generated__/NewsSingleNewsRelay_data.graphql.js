@@ -8,8 +8,8 @@
 
 /*::
 import type { ReaderFragment } from 'relay-runtime';
+type NewsSingleCategoryCardRelay_data$ref = any;
 type NewsSingleRelatedNewsRelay_data$ref = any;
-type NewsSingleSourceCardRelay_data$ref = any;
 import type { FragmentReference } from "relay-runtime";
 declare export opaque type NewsSingleNewsRelay_data$ref: FragmentReference;
 declare export opaque type NewsSingleNewsRelay_data$fragmentType: NewsSingleNewsRelay_data$ref;
@@ -21,15 +21,14 @@ export type NewsSingleNewsRelay_data = {|
   +refUrl: string,
   +abstract: string,
   +source: {|
-    +title: string,
-    +$fragmentRefs: NewsSingleSourceCardRelay_data$ref,
+    +title: string
   |},
   +tagsTitle: $ReadOnlyArray<?string>,
   +categoriesTitle: $ReadOnlyArray<?string>,
   +pubDate: string,
   +category: {|
     +id: string,
-    +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref,
+    +$fragmentRefs: NewsSingleRelatedNewsRelay_data$ref & NewsSingleCategoryCardRelay_data$ref,
   |},
   +$refType: NewsSingleNewsRelay_data$ref,
 |};
@@ -102,12 +101,7 @@ return {
       "concreteType": "NewsSource",
       "plural": false,
       "selections": [
-        (v1/*: any*/),
-        {
-          "kind": "FragmentSpread",
-          "name": "NewsSingleSourceCardRelay_data",
-          "args": null
-        }
+        (v1/*: any*/)
       ]
     },
     {
@@ -145,6 +139,11 @@ return {
           "kind": "FragmentSpread",
           "name": "NewsSingleRelatedNewsRelay_data",
           "args": null
+        },
+        {
+          "kind": "FragmentSpread",
+          "name": "NewsSingleCategoryCardRelay_data",
+          "args": null
         }
       ]
     }
@@ -152,5 +151,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '2fdef3157e7f562a45dd2b055c3ec22c';
+(node/*: any*/).hash = '8c98c81819f47ab34d587aa85dd00b10';
 module.exports = node;

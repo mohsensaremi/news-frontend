@@ -1,7 +1,7 @@
 import {compose} from 'recompose';
-import SourceCard from './SourceCard';
+import CategoryCard from './CategoryCard';
 import style from './style';
 
 export default compose(
     style,
-)(SourceCard);
+)(CategoryCard);

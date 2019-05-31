@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import JsxRenderer from 'utils/components/JsxRenderer';
 import {SetGlobalState} from 'packages/global-state';
 import {Link} from "react-router-dom";
-import SourceCard from '../../containers/SourceCard';
+import CategoryCard from '../../containers/CategoryCard';
 import RelatedNews from '../../containers/RelatedNews';
 
 const News = (props) => {
@@ -109,8 +109,8 @@ const News = (props) => {
                         </Paper>
                     </Grid>
                     <Grid item xs={12} md={3}>
-                        <SourceCard
-                            data={data.source}
+                        <CategoryCard
+                            data={data.category}
                             classes={{root: classes.sidebarItem}}
                         />
                         <RelatedNews

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash e138cce7f9b34c21900a3be292bc445f
+ * @relayHash 86794a75db3c8fbf02a4f562c95202b5
  */
 
 /* eslint-disable */
@@ -44,7 +44,6 @@ fragment NewsSingleNewsRelay_data on News {
   abstract
   source {
     title
-    ...NewsSingleSourceCardRelay_data
     id
   }
   tagsTitle
@@ -53,15 +52,11 @@ fragment NewsSingleNewsRelay_data on News {
   category {
     id
     ...NewsSingleRelatedNewsRelay_data
+    ...NewsSingleCategoryCardRelay_data
   }
 }
 
-fragment NewsSingleSourceCardRelay_data on NewsSource {
-  title
-}
-
 fragment NewsSingleRelatedNewsRelay_data on Category {
-  title
   news(first: 10) {
     edges {
       node {
@@ -70,6 +65,11 @@ fragment NewsSingleRelatedNewsRelay_data on Category {
       }
     }
   }
+}
+
+fragment NewsSingleCategoryCardRelay_data on Category {
+  _id
+  title
 }
 
 fragment NewsDesignDesign2Relay_data on News {
@@ -230,7 +230,6 @@ return {
             "plural": false,
             "selections": [
               (v2/*: any*/),
-              (v3/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -280,7 +279,15 @@ return {
                     ]
                   }
                 ]
-              }
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "_id",
+                "args": null,
+                "storageKey": null
+              },
+              (v3/*: any*/)
             ]
           }
         ]
@@ -290,7 +297,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "f888a258c6866464c11255b8fda930cd",
+    "id": "f6fcd2861430b62dae211ed79cec58bf",
     "text": null,
     "metadata": {}
   }
