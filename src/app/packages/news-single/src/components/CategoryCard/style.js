@@ -35,4 +35,7 @@ export default withStyles(theme => ({
     button: {
         padding: `2px ${theme.spacing.unit}px`,
     },
+    followsCount: {
+        marginTop: theme.spacing.unit / 2,
+    },
 }), {flip: false});

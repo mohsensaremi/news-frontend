@@ -12,6 +12,8 @@ const CategoryCard = (props) => {
         classes,
         title,
         _id,
+        user,
+        openAuthDialog,
     } = props;
     console.log("_id", props);
     return (
@@ -39,7 +41,7 @@ const CategoryCard = (props) => {
                                             variant={following ? "outlined" : "contained"}
                                             color={"primary"}
                                             className={classes.button}
-                                            onClick={following ? unfollow : follow}
+                                            onClick={user ? (following ? unfollow : follow) : (() => openAuthDialog(follow))}
                                             disabled={loading}
                                         >
                                             <AddIcon/>
@@ -51,8 +53,8 @@ const CategoryCard = (props) => {
                                 </Grid>
                                 {
                                     followsCount > 0 && (
-                                        <Typography variant={"caption"}>
-                                            {`${followsCount} نفر اخبار ${title} را دنبال می ${followsCount===1?"کند":"کنند"}`}
+                                        <Typography variant={"caption"} className={classes.followsCount}>
+                                            {`${followsCount} نفر اخبار ${title} را دنبال می ${followsCount === 1 ? "کند" : "کنند"}`}
                                         </Typography>
                                     )
                                 }

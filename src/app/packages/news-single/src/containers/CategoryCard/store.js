@@ -7,6 +7,6 @@ export default connect(
         userLoading: store.globalState.get('userLoading', false),
     }),
     dispatch => ({
-        openAuthDialog: () => dispatch(open('auth')),
+        openAuthDialog: (onSuccessLogin) => dispatch(open('auth', {onSuccess: onSuccessLogin})),
     })
 );
