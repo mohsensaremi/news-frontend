@@ -15,7 +15,7 @@ const CategoryCard = (props) => {
         user,
         openAuthDialog,
     } = props;
-    console.log("_id", props);
+
     return (
         <Paper className={classes.root}>
             <div className={classes.top}/>

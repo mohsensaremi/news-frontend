@@ -4,7 +4,6 @@ import {open} from 'packages/dialog';
 export default connect(
     store => ({
         user: store.globalState.get('user', null),
-        userLoading: store.globalState.get('userLoading', false),
     }),
     dispatch => ({
         openAuthDialog: (onSuccessLogin) => dispatch(open('auth', {onSuccess: onSuccessLogin})),

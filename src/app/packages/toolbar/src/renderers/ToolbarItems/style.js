@@ -8,4 +8,7 @@ export default withStyles(theme => ({
         minWidth: 0,
         minHeight: 64,
     },
+    primaryColorLabel: {
+        color: theme.palette.primary.main,
+    },
 }), {flip: false});

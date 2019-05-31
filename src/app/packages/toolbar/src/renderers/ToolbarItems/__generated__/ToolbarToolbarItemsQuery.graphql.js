@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 0e08e69a004ee5f20af490a39332a650
+ * @relayHash faf91617fb3f570604389153c148da3c
  */
 
 /* eslint-disable */
@@ -13,6 +13,7 @@ export type ToolbarToolbarItemsQueryVariables = {||};
 export type ToolbarToolbarItemsQueryResponse = {|
   +allCategories: $ReadOnlyArray<?{|
     +id: string,
+    +link: string,
     +title: string,
   |}>
 |};
@@ -27,6 +28,7 @@ export type ToolbarToolbarItemsQuery = {|
 query ToolbarToolbarItemsQuery {
   allCategories {
     id
+    link
     title
   }
 }
@@ -47,6 +49,13 @@ var v0 = [
         "kind": "ScalarField",
         "alias": null,
         "name": "id",
+        "args": null,
+        "storageKey": null
+      },
+      {
+        "kind": "ScalarField",
+        "alias": null,
+        "name": "link",
         "args": null,
         "storageKey": null
       },
@@ -79,12 +88,12 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ToolbarToolbarItemsQuery",
-    "id": "2989ff7819a84353f167a46a5c85655e",
+    "id": "dfd0f2290c5d58734ca6f7932d54e40d",
     "text": null,
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'df8c433cc11217a9afd3edfc391102c8';
+(node/*: any*/).hash = 'e2f0ac277badf204372448442dcf13f4';
 module.exports = node;
