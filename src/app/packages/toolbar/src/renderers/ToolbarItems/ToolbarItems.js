@@ -14,6 +14,7 @@ const ToolbarItems = (props) => {
         activeMenu,
         hasUser,
         openAuthDialog,
+        onChangeTab,
     } = props;
 
     const meTabProps = {};
@@ -37,7 +38,7 @@ const ToolbarItems = (props) => {
                     );
                 } else if (props) {
                     return (
-                        <Tabs className={classes.root} value={activeMenu}>
+                        <Tabs className={classes.root} value={activeMenu} onChange={onChangeTab}>
                             <Tab
                                 classes={{
                                     root: classes.tab,
@@ -67,7 +68,7 @@ const ToolbarItems = (props) => {
                                                 labelContainer: classes.labelContainer,
                                             }}
                                             key={item.id}
-                                            value={item.id}
+                                            value={item._id}
                                             label={item.title}
                                             component={Link}
                                             to={item.link}

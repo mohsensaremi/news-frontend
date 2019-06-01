@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash faf91617fb3f570604389153c148da3c
+ * @relayHash 2c88d3d7dec4ce6d28f486f7de4bd601
  */
 
 /* eslint-disable */
@@ -12,6 +12,7 @@ import type { ConcreteRequest } from 'relay-runtime';
 export type ToolbarToolbarItemsQueryVariables = {||};
 export type ToolbarToolbarItemsQueryResponse = {|
   +allCategories: $ReadOnlyArray<?{|
+    +_id: string,
     +id: string,
     +link: string,
     +title: string,
@@ -27,6 +28,7 @@ export type ToolbarToolbarItemsQuery = {|
 /*
 query ToolbarToolbarItemsQuery {
   allCategories {
+    _id
     id
     link
     title
@@ -45,6 +47,13 @@ var v0 = [
     "concreteType": "Category",
     "plural": true,
     "selections": [
+      {
+        "kind": "ScalarField",
+        "alias": null,
+        "name": "_id",
+        "args": null,
+        "storageKey": null
+      },
       {
         "kind": "ScalarField",
         "alias": null,
@@ -88,12 +97,12 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ToolbarToolbarItemsQuery",
-    "id": "dfd0f2290c5d58734ca6f7932d54e40d",
+    "id": "c8a918ccfcc0e7b0daae68dc401e407f",
     "text": null,
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'e2f0ac277badf204372448442dcf13f4';
+(node/*: any*/).hash = 'c8b1dbbace0734d9e409bbd74377ad09';
 module.exports = node;

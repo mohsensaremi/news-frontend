@@ -8,7 +8,7 @@ const Category = (props) => {
     const {
         classes,
         title,
-        id,
+        _id,
     } = props;
 
     return (
@@ -20,7 +20,7 @@ const Category = (props) => {
             </div>
             <LazyLoad once height={410}>
                 <CategoryNews
-                    categoryId={id}
+                    categoryId={_id}
                 />
             </LazyLoad>
         </div>

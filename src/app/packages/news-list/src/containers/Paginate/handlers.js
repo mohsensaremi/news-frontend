@@ -1,7 +1,7 @@
 import {withHandlers} from "recompose";
 
 export default withHandlers({
-    onClickMore: ({setLoading,relay}) => () => {
+    onClickMore: ({setLoading, relay}) => () => {
         if (!relay.hasMore()) {
             console.log(`Nothing more to load`);
             return
@@ -11,7 +11,7 @@ export default withHandlers({
         }
 
         setLoading(true);
-        relay.loadMore(5, () => {
+        relay.loadMore(20, () => {
             setLoading(false);
         })
     },

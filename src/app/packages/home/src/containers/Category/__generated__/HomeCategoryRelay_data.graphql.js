@@ -12,7 +12,7 @@ import type { FragmentReference } from "relay-runtime";
 declare export opaque type HomeCategoryRelay_data$ref: FragmentReference;
 declare export opaque type HomeCategoryRelay_data$fragmentType: HomeCategoryRelay_data$ref;
 export type HomeCategoryRelay_data = {|
-  +id: string,
+  +_id: string,
   +title: string,
   +$refType: HomeCategoryRelay_data$ref,
 |};
@@ -34,7 +34,7 @@ const node/*: ReaderFragment*/ = {
     {
       "kind": "ScalarField",
       "alias": null,
-      "name": "id",
+      "name": "_id",
       "args": null,
       "storageKey": null
     },
@@ -48,5 +48,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '2b2047539ab8d70d45abd3e60d008d6f';
+(node/*: any*/).hash = '3c2d63d25ffd0365eec5c901ef469b60';
 module.exports = node;

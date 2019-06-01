@@ -1,10 +1,11 @@
 import {createPaginationContainer, graphql} from 'react-relay';
 
 export default WrappedComponent => (
-    createPaginationContainer(WrappedComponent, graphql`
+    createPaginationContainer(WrappedComponent, {
+            data: graphql`
     fragment NewsListPaginateRelay_data on Category
         @argumentDefinitions(
-            first: {type: "Int", defaultValue: 10}
+            first: {type: "Int", defaultValue: 20}
             after: {type: "String"}
         ) {
             news(first: $first, after: $after)
@@ -14,7 +15,8 @@ export default WrappedComponent => (
                     }
             }
     }
-    `,
+    `
+        },
         {
             direction: 'forward',
             query: graphql`
@@ -33,13 +35,13 @@ export default WrappedComponent => (
                     count: totalCount,
                 };
             },
-            getVariables(props, pageInfo, fragmentVariables) {
+            getVariables(props, pageInfo) {
 
                 return {
                     count: pageInfo.count,
                     first: pageInfo.count,
                     after: pageInfo.cursor,
-                    categoryId: fragmentVariables.categoryId,
+                    categoryId: props.categoryId,
                 };
             },
         }

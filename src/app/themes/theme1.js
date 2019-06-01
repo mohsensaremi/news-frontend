@@ -57,6 +57,7 @@ theme = {
     ...theme,
     variable: {
         maxWidth: 1100,
+        maxWidth2: 1000,
         shadow: theme.shadows[1],
         linkColor: blue[500],
         transition: theme.transitions.create('all', {

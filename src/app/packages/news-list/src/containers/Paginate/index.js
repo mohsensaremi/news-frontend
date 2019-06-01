@@ -1,10 +1,10 @@
 import {compose, withState} from 'recompose';
 import Paginate from '../../components/Paginate';
-import MemberQuestionPaginateRelay from './MemberQuestionPaginateRelay';
+import NewsListPaginateRelay from './NewsListPaginateRelay';
 import handlers from './handlers';
 
 export default compose(
-    MemberQuestionPaginateRelay,
+    NewsListPaginateRelay,
     withState('loading', 'setLoading', false),
     handlers,
 )(Paginate);

@@ -3,5 +3,5 @@ import List from './List';
 import style from './style';
 
 export default compose(
-    style(),
+    style,
 )(List);

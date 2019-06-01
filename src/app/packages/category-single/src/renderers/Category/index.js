@@ -1,7 +1,7 @@
 import {compose} from 'recompose';
-import Paginate from './Paginate';
+import Category from './Category';
 import style from './style';
 
 export default compose(
     style,
-)(Paginate);
+)(Category);

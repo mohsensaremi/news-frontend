@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 9ea96f045a432f765920f5ce20b18295
+ * @relayHash 715260bdf4384a3ae9d766a09daa88ed
  */
 
 /* eslint-disable */
@@ -37,7 +37,7 @@ fragment HomeHomeRelay_data on Category {
 }
 
 fragment HomeCategoryRelay_data on Category {
-  id
+  _id
   title
 }
 */
@@ -93,6 +93,13 @@ const node/*: ConcreteRequest*/ = {
           {
             "kind": "ScalarField",
             "alias": null,
+            "name": "_id",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
             "name": "title",
             "args": null,
             "storageKey": null
@@ -104,7 +111,7 @@ const node/*: ConcreteRequest*/ = {
   "params": {
     "operationKind": "query",
     "name": "HomeHomeQuery",
-    "id": "d89474bc3406c14f4c24d3ce1f9cfcc4",
+    "id": "42048cc8a412e49d4273ae5e5f567401",
     "text": null,
     "metadata": {}
   }
