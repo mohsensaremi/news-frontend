@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 86794a75db3c8fbf02a4f562c95202b5
+ * @relayHash 4e09a198bf592480c093ef6a3e3a59a2
  */
 
 /* eslint-disable */
@@ -78,6 +78,7 @@ fragment NewsDesignDesign2Relay_data on News {
     title
     id
   }
+  abstract
   link
   pubDate
 }
@@ -114,6 +115,13 @@ v3 = {
   "storageKey": null
 },
 v4 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "abstract",
+  "args": null,
+  "storageKey": null
+},
+v5 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "source",
@@ -126,7 +134,7 @@ v4 = {
     (v2/*: any*/)
   ]
 },
-v5 = {
+v6 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "pubDate",
@@ -197,14 +205,8 @@ return {
             "args": null,
             "storageKey": null
           },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "abstract",
-            "args": null,
-            "storageKey": null
-          },
           (v4/*: any*/),
+          (v5/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -219,7 +221,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v5/*: any*/),
+          (v6/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -265,6 +267,7 @@ return {
                         "selections": [
                           (v2/*: any*/),
                           (v3/*: any*/),
+                          (v5/*: any*/),
                           (v4/*: any*/),
                           {
                             "kind": "ScalarField",
@@ -273,7 +276,7 @@ return {
                             "args": null,
                             "storageKey": null
                           },
-                          (v5/*: any*/)
+                          (v6/*: any*/)
                         ]
                       }
                     ]
@@ -297,7 +300,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "f6fcd2861430b62dae211ed79cec58bf",
+    "id": "a70ad570a37bfa5308ac597cb2f6bd4a",
     "text": null,
     "metadata": {}
   }

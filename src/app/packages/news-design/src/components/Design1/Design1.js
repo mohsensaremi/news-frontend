@@ -12,6 +12,8 @@ const Design1 = (props) => {
         source,
         abstract,
         link,
+        pubDate,
+        showPubDate,
     } = props;
 
     return (
@@ -21,9 +23,18 @@ const Design1 = (props) => {
                     <Typography className={classes.title} noWrap>
                         {title}
                     </Typography>
-                    <Typography variant="caption" className={classes.sourceName}>
-                        {source.title}
-                    </Typography>
+                    <div className={classes.info}>
+                        {
+                            showPubDate && (
+                                <Typography variant="caption" className={classes.pubDate}>
+                                    {pubDate}
+                                </Typography>
+                            )
+                        }
+                        <Typography variant="caption" className={classes.sourceName}>
+                            {source.title}
+                        </Typography>
+                    </div>
                 </Paper>
             </Link>
         </Tooltip>
@@ -32,6 +43,10 @@ const Design1 = (props) => {
 
 Design1.propTypes = {
     classes: PropTypes.object.isRequired,
+};
+
+Design1.defaultProps = {
+    showPubDate: false,
 };
 
 export default Design1;

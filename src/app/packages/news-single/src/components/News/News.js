@@ -28,7 +28,7 @@ const News = (props) => {
     return (
         <div className={'limitWidth'}>
             <SetGlobalState
-                itemKey={"activeCategoryId"}
+                itemKey={"activeMenu"}
                 itemValue={category.id}
             />
             <div className={classes.root}>

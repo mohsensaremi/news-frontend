@@ -11,7 +11,7 @@ const ToolbarItems = (props) => {
 
     const {
         classes,
-        activeCategoryId,
+        activeMenu,
         hasUser,
         openAuthDialog,
     } = props;
@@ -37,7 +37,17 @@ const ToolbarItems = (props) => {
                     );
                 } else if (props) {
                     return (
-                        <Tabs className={classes.root} value={activeCategoryId}>
+                        <Tabs className={classes.root} value={activeMenu}>
+                            <Tab
+                                classes={{
+                                    root: classes.tab,
+                                    labelContainer: classes.labelContainer,
+                                }}
+                                value={'home'}
+                                label={'صفحه اصلی'}
+                                component={Link}
+                                to={'/'}
+                            />
                             <Tab
                                 classes={{
                                     root: classes.tab,

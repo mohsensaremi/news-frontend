@@ -8,6 +8,7 @@ export default WrappedComponent => (
             source {
                 title
             }
+            abstract
             link
             pubDate
         }

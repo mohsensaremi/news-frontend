@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash df43ef2bd34eb952aa346216748c9121
+ * @relayHash b7be983916c379f28ef0868bc0e5a726
  */
 
 /* eslint-disable */
@@ -9,44 +9,73 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type HomeCategoryNewsRelay_data$ref = any;
-export type HomeCategoryNewsQueryVariables = {|
-  id: string
+type NewsListPaginateRelay_data$ref = any;
+export type NewsListPaginateRelayForwardQueryVariables = {|
+  categoryId: string,
+  first: number,
+  after?: ?string,
 |};
-export type HomeCategoryNewsQueryResponse = {|
+export type NewsListPaginateRelayForwardQueryResponse = {|
   +categoryById: ?{|
-    +$fragmentRefs: HomeCategoryNewsRelay_data$ref
+    +$fragmentRefs: NewsListPaginateRelay_data$ref
   |}
 |};
-export type HomeCategoryNewsQuery = {|
-  variables: HomeCategoryNewsQueryVariables,
-  response: HomeCategoryNewsQueryResponse,
+export type NewsListPaginateRelayForwardQuery = {|
+  variables: NewsListPaginateRelayForwardQueryVariables,
+  response: NewsListPaginateRelayForwardQueryResponse,
 |};
 */
 
 
 /*
-query HomeCategoryNewsQuery(
-  $id: String!
+query NewsListPaginateRelayForwardQuery(
+  $categoryId: String!
+  $first: Int!
+  $after: String
 ) {
-  categoryById(id: $id) {
-    ...HomeCategoryNewsRelay_data
+  categoryById(id: $categoryId) {
+    ...NewsListPaginateRelay_data_2HEEH6
     id
   }
 }
 
-fragment HomeCategoryNewsRelay_data on Category {
-  news(first: 10) {
+fragment NewsListPaginateRelay_data_2HEEH6 on Category {
+  news(first: $first, after: $after) {
     edges {
+      ...NewsListListRelay_data
+      cursor
       node {
+        __typename
         id
-        ...NewsDesignDesign1Relay_data
       }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
     }
   }
 }
 
+fragment NewsListListRelay_data on NewsEdge {
+  node {
+    ...NewsDesignDesign1Relay_data
+    ...NewsDesignDesign2Relay_data
+    id
+  }
+}
+
 fragment NewsDesignDesign1Relay_data on News {
+  title
+  source {
+    title
+    id
+  }
+  abstract
+  link
+  pubDate
+}
+
+fragment NewsDesignDesign2Relay_data on News {
   title
   source {
     title
@@ -62,8 +91,20 @@ const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
-    "name": "id",
+    "name": "categoryId",
     "type": "String!",
+    "defaultValue": null
+  },
+  {
+    "kind": "LocalArgument",
+    "name": "first",
+    "type": "Int!",
+    "defaultValue": null
+  },
+  {
+    "kind": "LocalArgument",
+    "name": "after",
+    "type": "String",
     "defaultValue": null
   }
 ],
@@ -71,20 +112,32 @@ v1 = [
   {
     "kind": "Variable",
     "name": "id",
-    "variableName": "id"
+    "variableName": "categoryId"
   }
 ],
-v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "id",
-  "args": null,
-  "storageKey": null
-},
+v2 = [
+  {
+    "kind": "Variable",
+    "name": "after",
+    "variableName": "after"
+  },
+  {
+    "kind": "Variable",
+    "name": "first",
+    "variableName": "first"
+  }
+],
 v3 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "title",
+  "args": null,
+  "storageKey": null
+},
+v4 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
   "args": null,
   "storageKey": null
 };
@@ -92,7 +145,7 @@ return {
   "kind": "Request",
   "fragment": {
     "kind": "Fragment",
-    "name": "HomeCategoryNewsQuery",
+    "name": "NewsListPaginateRelayForwardQuery",
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": (v0/*: any*/),
@@ -108,8 +161,8 @@ return {
         "selections": [
           {
             "kind": "FragmentSpread",
-            "name": "HomeCategoryNewsRelay_data",
-            "args": null
+            "name": "NewsListPaginateRelay_data",
+            "args": (v2/*: any*/)
           }
         ]
       }
@@ -117,7 +170,7 @@ return {
   },
   "operation": {
     "kind": "Operation",
-    "name": "HomeCategoryNewsQuery",
+    "name": "NewsListPaginateRelayForwardQuery",
     "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
@@ -133,14 +186,8 @@ return {
             "kind": "LinkedField",
             "alias": null,
             "name": "news",
-            "storageKey": "news(first:10)",
-            "args": [
-              {
-                "kind": "Literal",
-                "name": "first",
-                "value": 10
-              }
-            ],
+            "storageKey": null,
+            "args": (v2/*: any*/),
             "concreteType": "NewsConnection",
             "plural": false,
             "selections": [
@@ -162,7 +209,6 @@ return {
                     "concreteType": "News",
                     "plural": false,
                     "selections": [
-                      (v2/*: any*/),
                       (v3/*: any*/),
                       {
                         "kind": "LinkedField",
@@ -174,7 +220,7 @@ return {
                         "plural": false,
                         "selections": [
                           (v3/*: any*/),
-                          (v2/*: any*/)
+                          (v4/*: any*/)
                         ]
                       },
                       {
@@ -197,27 +243,76 @@ return {
                         "name": "pubDate",
                         "args": null,
                         "storageKey": null
+                      },
+                      (v4/*: any*/),
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "__typename",
+                        "args": null,
+                        "storageKey": null
                       }
                     ]
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "cursor",
+                    "args": null,
+                    "storageKey": null
+                  }
+                ]
+              },
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "pageInfo",
+                "storageKey": null,
+                "args": null,
+                "concreteType": "PageInfo",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "endCursor",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "hasNextPage",
+                    "args": null,
+                    "storageKey": null
                   }
                 ]
               }
             ]
           },
-          (v2/*: any*/)
+          {
+            "kind": "LinkedHandle",
+            "alias": null,
+            "name": "news",
+            "args": (v2/*: any*/),
+            "handle": "connection",
+            "key": "NewsListPaginate_news",
+            "filters": []
+          },
+          (v4/*: any*/)
         ]
       }
     ]
   },
   "params": {
     "operationKind": "query",
-    "name": "HomeCategoryNewsQuery",
-    "id": "56cf587221f9156abb712bd835bc3ae2",
+    "name": "NewsListPaginateRelayForwardQuery",
+    "id": "88127332ccb70904527551e7d38134bb",
     "text": null,
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'f592834114df6b1da6a984e5335b2ffb';
+(node/*: any*/).hash = 'c92925e4a38a69739a6f06b99b976f84';
 module.exports = node;

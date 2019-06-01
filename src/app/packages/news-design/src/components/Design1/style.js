@@ -7,6 +7,10 @@ export default withStyles(theme => ({
         alignItems: 'center',
         justifyContent: 'space-between',
     },
+    info: {
+        display: 'flex',
+        alignItems: 'center',
+    },
     title: {},
     sourceName: {
         color: theme.palette.text.secondary,
