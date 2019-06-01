@@ -9,13 +9,15 @@ export default withStyles(theme => ({
     },
     sourceName: {
         color: theme.palette.text.secondary,
-        minWidth: 64,
+        fontWeight: 300,
+    },
+    category: {
         fontWeight: 300,
     },
     footer: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: 4,
+        marginTop: theme.spacing.unit,
     },
 }), {flip: false});

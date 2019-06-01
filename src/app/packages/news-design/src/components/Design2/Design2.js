@@ -12,6 +12,8 @@ const Design2 = (props) => {
         source,
         link,
         pubDate,
+        category,
+        showCategory,
     } = props;
 
     return (
@@ -21,6 +23,13 @@ const Design2 = (props) => {
                     {title}
                 </Typography>
                 <div className={classes.footer}>
+                    {
+                        showCategory && (
+                            <Typography variant="caption" className={classes.category}>
+                                {category.title}
+                            </Typography>
+                        )
+                    }
                     <Typography variant="caption" className={classes.sourceName}>
                         {source.title}
                     </Typography>
