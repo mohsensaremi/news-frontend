@@ -15,7 +15,8 @@ declare export opaque type NewsListListRelay_data$ref: FragmentReference;
 declare export opaque type NewsListListRelay_data$fragmentType: NewsListListRelay_data$ref;
 export type NewsListListRelay_data = $ReadOnlyArray<{|
   +node: ?{|
-    +$fragmentRefs: NewsDesignDesign1Relay_data$ref & NewsDesignDesign2Relay_data$ref
+    +id: string,
+    +$fragmentRefs: NewsDesignDesign1Relay_data$ref & NewsDesignDesign2Relay_data$ref,
   |},
   +$refType: NewsListListRelay_data$ref,
 |}>;
@@ -46,6 +47,13 @@ const node/*: ReaderFragment*/ = {
       "plural": false,
       "selections": [
         {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "id",
+          "args": null,
+          "storageKey": null
+        },
+        {
           "kind": "FragmentSpread",
           "name": "NewsDesignDesign1Relay_data",
           "args": null
@@ -60,5 +68,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = 'f3d1d72f94f96050c070242dd78dfc10';
+(node/*: any*/).hash = '0544296e878f994399707f6632052f3a';
 module.exports = node;

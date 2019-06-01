@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash df43ef2bd34eb952aa346216748c9121
+ * @relayHash afb5cc8458dd31e9f22d7d8d48ef8c02
  */
 
 /* eslint-disable */
@@ -52,6 +52,10 @@ fragment NewsDesignDesign1Relay_data on News {
     title
     id
   }
+  category {
+    title
+    id
+  }
   abstract
   link
   pubDate
@@ -87,7 +91,11 @@ v3 = {
   "name": "title",
   "args": null,
   "storageKey": null
-};
+},
+v4 = [
+  (v3/*: any*/),
+  (v2/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -172,10 +180,17 @@ return {
                         "args": null,
                         "concreteType": "NewsSource",
                         "plural": false,
-                        "selections": [
-                          (v3/*: any*/),
-                          (v2/*: any*/)
-                        ]
+                        "selections": (v4/*: any*/)
+                      },
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "name": "category",
+                        "storageKey": null,
+                        "args": null,
+                        "concreteType": "Category",
+                        "plural": false,
+                        "selections": (v4/*: any*/)
                       },
                       {
                         "kind": "ScalarField",
@@ -212,7 +227,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "HomeCategoryNewsQuery",
-    "id": "56cf587221f9156abb712bd835bc3ae2",
+    "id": "6c75587347f2d127b196582af690fde2",
     "text": null,
     "metadata": {}
   }

@@ -14,6 +14,8 @@ const Design1 = (props) => {
         link,
         pubDate,
         showPubDate,
+        category,
+        showCategory,
     } = props;
 
     return (
@@ -24,6 +26,13 @@ const Design1 = (props) => {
                         {title}
                     </Typography>
                     <div className={classes.info}>
+                        {
+                            showCategory && (
+                                <Typography variant="caption" className={classes.category}>
+                                    {category.title}
+                                </Typography>
+                            )
+                        }
                         {
                             showPubDate && (
                                 <Typography variant="caption" className={classes.pubDate}>
@@ -47,6 +56,7 @@ Design1.propTypes = {
 
 Design1.defaultProps = {
     showPubDate: false,
+    showCategory: false,
 };
 
 export default Design1;

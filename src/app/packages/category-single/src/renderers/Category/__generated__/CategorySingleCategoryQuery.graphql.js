@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d480630f8fe198107cb8c2b86945d39e
+ * @relayHash beabcdbd02c8c3dff9b8f6eb24317780
  */
 
 /* eslint-disable */
@@ -61,15 +61,19 @@ fragment NewsListPaginateRelay_data_3ASum4 on Category {
 
 fragment NewsListListRelay_data on NewsEdge {
   node {
+    id
     ...NewsDesignDesign1Relay_data
     ...NewsDesignDesign2Relay_data
-    id
   }
 }
 
 fragment NewsDesignDesign1Relay_data on News {
   title
   source {
+    title
+    id
+  }
+  category {
     title
     id
   }
@@ -81,6 +85,10 @@ fragment NewsDesignDesign1Relay_data on News {
 fragment NewsDesignDesign2Relay_data on News {
   title
   source {
+    title
+    id
+  }
+  category {
     title
     id
   }
@@ -132,7 +140,11 @@ v4 = {
   "name": "id",
   "args": null,
   "storageKey": null
-};
+},
+v5 = [
+  (v3/*: any*/),
+  (v4/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -202,6 +214,7 @@ return {
                     "concreteType": "News",
                     "plural": false,
                     "selections": [
+                      (v4/*: any*/),
                       (v3/*: any*/),
                       {
                         "kind": "LinkedField",
@@ -211,10 +224,17 @@ return {
                         "args": null,
                         "concreteType": "NewsSource",
                         "plural": false,
-                        "selections": [
-                          (v3/*: any*/),
-                          (v4/*: any*/)
-                        ]
+                        "selections": (v5/*: any*/)
+                      },
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "name": "category",
+                        "storageKey": null,
+                        "args": null,
+                        "concreteType": "Category",
+                        "plural": false,
+                        "selections": (v5/*: any*/)
                       },
                       {
                         "kind": "ScalarField",
@@ -237,7 +257,6 @@ return {
                         "args": null,
                         "storageKey": null
                       },
-                      (v4/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -300,7 +319,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CategorySingleCategoryQuery",
-    "id": "e9bbb5bb16ca687789237e511cfeb057",
+    "id": "0dd9e5e296420acc363ab989ebe749ab",
     "text": null,
     "metadata": {}
   }

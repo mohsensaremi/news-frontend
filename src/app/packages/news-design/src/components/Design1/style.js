@@ -17,4 +17,13 @@ export default withStyles(theme => ({
         minWidth: 64,
         textAlign: 'left',
     },
+    pubDate: {
+        color: theme.palette.text.secondary,
+        minWidth: 128,
+        textAlign: 'left',
+    },
+    category: {
+        minWidth: 64,
+        textAlign: 'left',
+    },
 }), {flip: false});

@@ -16,6 +16,9 @@ export type NewsDesignDesign1Relay_data = {|
   +source: {|
     +title: string
   |},
+  +category: {|
+    +title: string
+  |},
   +abstract: string,
   +link: string,
   +pubDate: string,
@@ -36,7 +39,10 @@ var v0 = {
   "name": "title",
   "args": null,
   "storageKey": null
-};
+},
+v1 = [
+  (v0/*: any*/)
+];
 return {
   "kind": "Fragment",
   "name": "NewsDesignDesign1Relay_data",
@@ -53,9 +59,17 @@ return {
       "args": null,
       "concreteType": "NewsSource",
       "plural": false,
-      "selections": [
-        (v0/*: any*/)
-      ]
+      "selections": (v1/*: any*/)
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "name": "category",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "Category",
+      "plural": false,
+      "selections": (v1/*: any*/)
     },
     {
       "kind": "ScalarField",
@@ -82,5 +96,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '46db0a71825b9a0811bce0b68dd8cdfa';
+(node/*: any*/).hash = '8a040af6f64391d448c1ab9d4efb1fec';
 module.exports = node;

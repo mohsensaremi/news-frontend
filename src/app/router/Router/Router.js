@@ -7,6 +7,7 @@ import Toolbar from 'app/packages/toolbar/src/containers/Toolbar';
 import Home from 'app/packages/home/src/renderers/Home';
 import News from 'app/packages/news-single/src/renderers/News';
 import Category from 'app/packages/category-single/src/renderers/Category';
+import MyNews from 'app/packages/my-news/src/renderers/MyNews';
 import AuthDialog from 'app/packages/auth/src/containers/Dialog';
 import AuthMe from 'app/packages/auth/src/renderers/Me';
 
@@ -26,6 +27,7 @@ const Router = (props) => {
             <Switch>
                 <Route exact path={`/news/:id`} component={News}/>
                 <Route exact path={`/category/:id`} component={Category}/>
+                <Route exact path={`/me`} component={MyNews}/>
                 <Route path={`/`} component={Home}/>
             </Switch>
             <AuthDialog/>

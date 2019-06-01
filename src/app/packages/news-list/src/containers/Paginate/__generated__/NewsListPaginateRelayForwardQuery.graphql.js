@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash b7be983916c379f28ef0868bc0e5a726
+ * @relayHash f05aeade18fcf3450fcebaa1cc128686
  */
 
 /* eslint-disable */
@@ -58,15 +58,19 @@ fragment NewsListPaginateRelay_data_2HEEH6 on Category {
 
 fragment NewsListListRelay_data on NewsEdge {
   node {
+    id
     ...NewsDesignDesign1Relay_data
     ...NewsDesignDesign2Relay_data
-    id
   }
 }
 
 fragment NewsDesignDesign1Relay_data on News {
   title
   source {
+    title
+    id
+  }
+  category {
     title
     id
   }
@@ -78,6 +82,10 @@ fragment NewsDesignDesign1Relay_data on News {
 fragment NewsDesignDesign2Relay_data on News {
   title
   source {
+    title
+    id
+  }
+  category {
     title
     id
   }
@@ -130,17 +138,21 @@ v2 = [
 v3 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "title",
+  "name": "id",
   "args": null,
   "storageKey": null
 },
 v4 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "id",
+  "name": "title",
   "args": null,
   "storageKey": null
-};
+},
+v5 = [
+  (v4/*: any*/),
+  (v3/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -210,6 +222,7 @@ return {
                     "plural": false,
                     "selections": [
                       (v3/*: any*/),
+                      (v4/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -218,10 +231,17 @@ return {
                         "args": null,
                         "concreteType": "NewsSource",
                         "plural": false,
-                        "selections": [
-                          (v3/*: any*/),
-                          (v4/*: any*/)
-                        ]
+                        "selections": (v5/*: any*/)
+                      },
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "name": "category",
+                        "storageKey": null,
+                        "args": null,
+                        "concreteType": "Category",
+                        "plural": false,
+                        "selections": (v5/*: any*/)
                       },
                       {
                         "kind": "ScalarField",
@@ -244,7 +264,6 @@ return {
                         "args": null,
                         "storageKey": null
                       },
-                      (v4/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -299,7 +318,7 @@ return {
             "key": "NewsListPaginate_news",
             "filters": []
           },
-          (v4/*: any*/)
+          (v3/*: any*/)
         ]
       }
     ]
@@ -307,7 +326,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsListPaginateRelayForwardQuery",
-    "id": "88127332ccb70904527551e7d38134bb",
+    "id": "ddfcf9f8bdb59374176d1c4f15cac905",
     "text": null,
     "metadata": {}
   }

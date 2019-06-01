@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 4e09a198bf592480c093ef6a3e3a59a2
+ * @relayHash c3a41e98594af2d3795d412a95d667da
  */
 
 /* eslint-disable */
@@ -78,6 +78,10 @@ fragment NewsDesignDesign2Relay_data on News {
     title
     id
   }
+  category {
+    title
+    id
+  }
   abstract
   link
   pubDate
@@ -121,7 +125,11 @@ v4 = {
   "args": null,
   "storageKey": null
 },
-v5 = {
+v5 = [
+  (v3/*: any*/),
+  (v2/*: any*/)
+],
+v6 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "source",
@@ -129,12 +137,9 @@ v5 = {
   "args": null,
   "concreteType": "NewsSource",
   "plural": false,
-  "selections": [
-    (v3/*: any*/),
-    (v2/*: any*/)
-  ]
+  "selections": (v5/*: any*/)
 },
-v6 = {
+v7 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "pubDate",
@@ -206,7 +211,7 @@ return {
             "storageKey": null
           },
           (v4/*: any*/),
-          (v5/*: any*/),
+          (v6/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -221,7 +226,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v6/*: any*/),
+          (v7/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -267,7 +272,17 @@ return {
                         "selections": [
                           (v2/*: any*/),
                           (v3/*: any*/),
-                          (v5/*: any*/),
+                          (v6/*: any*/),
+                          {
+                            "kind": "LinkedField",
+                            "alias": null,
+                            "name": "category",
+                            "storageKey": null,
+                            "args": null,
+                            "concreteType": "Category",
+                            "plural": false,
+                            "selections": (v5/*: any*/)
+                          },
                           (v4/*: any*/),
                           {
                             "kind": "ScalarField",
@@ -276,7 +291,7 @@ return {
                             "args": null,
                             "storageKey": null
                           },
-                          (v6/*: any*/)
+                          (v7/*: any*/)
                         ]
                       }
                     ]
@@ -300,7 +315,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "a70ad570a37bfa5308ac597cb2f6bd4a",
+    "id": "c114b5a7bacb5a85e68e6843584d02eb",
     "text": null,
     "metadata": {}
   }

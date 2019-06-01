@@ -23,6 +23,7 @@ const List = (props) => {
                                 <NewsDesign1
                                     data={item}
                                     showPubDate={true}
+                                    showCategory={true}
                                     classes={{
                                         root: classes.news,
                                     }}
@@ -31,6 +32,7 @@ const List = (props) => {
                             <Hidden mdUp>
                                 <NewsDesign2
                                     data={item}
+                                    showCategory={true}
                                     classes={{
                                         root: classes.news,
                                     }}
