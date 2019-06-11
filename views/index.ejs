@@ -1,0 +1,48 @@
+<html dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="theme-color" content="#35b995"><!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#35b995"><!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#35b995">
+    <% if (typeof metaTags !== 'undefined' && Array.isArray(metaTags)) {
+    metaTags.forEach(item => {
+        let meta = '<meta ';
+        Object.entries(item).map(([key, value]) => {
+            meta += `${key}="${value}" `;
+        });
+        meta += '/>'
+    %>
+    <%- meta %>
+    <%
+    });
+    } %>
+    <meta name="storage-cache-version" content="<%- process.env.STORAGE_CACHE_VERSION %>">
+    <meta name="now" content="<%- now %>">
+    <% if (typeof keywords !== 'undefined') { %>
+        <meta name="keywords" content="<%- keywords %>">
+    <% } %>
+    <% if (typeof description !== 'undefined') { %>
+        <meta name="description" content="<%- description %>">
+    <% } %>
+    <%- typeof seoSchema !== "undefined" ? `<script type="application/ld+json">${JSON.stringify(seoSchema)}</script>` : '' %>
+    <link rel="shortcut icon" href="<%- `${process.env.CDN_URL}/favicon.ico` %>">
+    <title><%- typeof title !== "undefined" ? title : 'news' %></title>
+    <link rel="preload" href="http://localhost:4100/build/css/app.css" as="style">
+    <link rel="preload" href="http://localhost:4100/build/js/chunks/vendor.js" as="script">
+    <link rel="preload" href="http://localhost:4100/build/js/app.js" as="script">
+    <link href="http://localhost:4100/build/css/fonts.css" rel="stylesheet">
+    <link href="http://localhost:4100/build/css/app.css" rel="stylesheet">
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<script type="application/json" id="store"><%- JSON.stringify(store) %></script>
+<script type="application/json"
+        id="relayStore"><%- typeof relayStore !== "undefined" ? JSON.stringify(relayStore) : '' %></script>
+<script type="text/javascript" src="<%- `${process.env.REACT_APP_CDN_URL}/favicon.ico` %>"></script>
+<script type="text/javascript" src="http://localhost:4100/build/js/app.js"></script>
+</body>
+</html>
