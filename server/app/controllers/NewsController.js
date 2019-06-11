@@ -16,7 +16,7 @@ export async function single(ctx) {
             abstract
             source {
                 title
-                link
+                url
                 logo
             }
         }
@@ -35,8 +35,8 @@ export async function single(ctx) {
 
         const publisher = {
             "@type": "Organization",
-            "@id": news.source.link,
-            "url": news.source.link,
+            "@id": news.source.url,
+            "url": news.source.url,
             "name": news.source.title,
             "logo": news.source.logo,
         };
