@@ -1,4 +1,4 @@
-import persistedQueries from '../../../client/persisted-queries';
+import persistedQueries from '../../../src/persisted-queries';
 import {parse} from 'graphql';
 import isEqual from 'lodash/isEqual';
 
