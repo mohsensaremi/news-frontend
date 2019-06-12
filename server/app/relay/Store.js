@@ -1,5 +1,5 @@
 import queries from './queries'
-import fetchData from "../../../client/app/relay/environment/fetchData";
+import fetchData from "../../../src/app/relay/environment/fetchData";
 
 class Store {
     store = [];
