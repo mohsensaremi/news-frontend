@@ -44,8 +44,8 @@
     "build": "react-app-rewired build",
     "test": "react-scripts test",
     "server-dev": "NODE_ENV=development NODE_PATH=./server/ babel-node ./server/index.js --config-file ./.babelrc.server",
-    "server-build": "yarn server-build-src && yarn server-build-server && cp src/persisted-queries.json dist/src/persisted-queries.json",
-    "server-build-server": "NODE_ENV=production babel server --out-dir ./dist/server --config-file ./.babelrc.server",
+    "server-build": "yarn server-build-src && yarn server-build-server && cp src/persisted-queries.json dist/src/persisted-queries.json && cp -r build dist",
+    "server-build-server": "NODE_ENV=production babel server --out-dir ./dist/server --config-file ./.babelrc.server --copy-files",
     "server-build-src": "NODE_ENV=production babel src/app/relay --out-dir ./dist/src/app/relay --config-file ./.babelrc.server",
     "eject": "react-scripts eject"
   },
