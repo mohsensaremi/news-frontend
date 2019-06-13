@@ -5,9 +5,9 @@ import router from 'app/router';
 
 const app = new Koa();
 
-app.use(serve(__dirname + './../build/'))
-    .use(router.routes())
+app .use(router.routes())
     .use(router.allowedMethods())
+    .use(serve(__dirname + './../build/'))
     .listen(process.env.APP_PORT, () => {
         console.log(`server listening on ${process.env.APP_PORT}`);
     });
