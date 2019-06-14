@@ -16,11 +16,34 @@ const fetchData = (body) => {
         headers,
         body: JSON.stringify(body),
     }).then(response => {
-        const newToken = response.headers.get('x-authorization-updated');
-        if (newToken) {
-            window.localStorage.setItem('userToken', newToken);
-        }
-        return response.json()
+        const jsonPromise = response.json();
+        return jsonPromise.then(json => {
+
+            console.log("json", json);
+            if (Array.isArray(json.errors) && json.errors.length > 0) {
+                if (json.errors[0].extensions.code === "UNAUTHENTICATED" && json.errors[0].message === "jwt expired") {
+                    console.log("json", json);
+                    return fetch(process.env.REACT_APP_GRAPHQL_URL, {
+                        method: 'POST',
+                        headers,
+                        body: JSON.stringify({
+                            query: 'mutation RefreshToken { refreshToken { result { success } token } }'
+                        }),
+                    }).then((res) => {
+                        return res.json()
+                    }).then(res => {
+                        if (res.data && res.data.refreshToken && res.data.refreshToken.token) {
+                            window.localStorage.setItem('userToken', res.data.refreshToken.token);
+                            return fetchData(body);
+                        }
+                        window.localStorage.removeItem('userToken');
+                        return Promise.resolve(res);
+                    });
+                }
+            }
+
+            return jsonPromise;
+        });
     });
 };
 

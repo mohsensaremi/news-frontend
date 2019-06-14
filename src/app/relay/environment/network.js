@@ -66,11 +66,13 @@ const network = Network.create((operation, variables, cacheConfig, uploadables) 
     };
 
     return fetchData(fetchDataBody).then(json => {
-        if (Array.isArray(json.errors) && json.errors.length > 0 && json.errors[0].extensions.code === "PERSISTED_QUERY_NOT_FOUND") {
-            return fetchData({
-                ...fetchDataBody,
-                query: persistQueries[queryId].query,
-            }).then(fetchSuccess);
+        if (Array.isArray(json.errors) && json.errors.length > 0) {
+            if (json.errors[0].extensions.code === "PERSISTED_QUERY_NOT_FOUND") {
+                return fetchData({
+                    ...fetchDataBody,
+                    query: persistQueries[queryId].query,
+                }).then(fetchSuccess);
+            }
         } else {
             return fetchSuccess(json);
         }
