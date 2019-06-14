@@ -10,6 +10,7 @@ import {Field} from "redux-form";
 const Dialog = (props) => {
 
     const {
+        classes,
         open,
         onClose,
         onSubmit,
@@ -45,10 +46,21 @@ const Dialog = (props) => {
             </DialogContent>
             <DialogActions>
                 <Button
+                    href={process.env.REACT_APP_GOOGLE_AUTH_URL}
+                    target={"_blank"}
+                    disabled={submitting}
+                    color="primary"
+                    variant={"contained"}
+                    className={classes.button}
+                >
+                    ورود با گوگل
+                </Button>
+                <Button
                     onClick={handleSubmit(onSubmit)}
                     disabled={submitting}
                     color="primary"
                     variant={"contained"}
+                    className={classes.button}
                 >
                     ورود / ثبت نام
                 </Button>
