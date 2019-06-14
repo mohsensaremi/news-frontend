@@ -9,12 +9,15 @@ const List = (props) => {
     const {
         classes,
         data,
+        useNode,
     } = props;
 
     return (
         <div className={classes.root}>
             {
-                data.map(({node: item}) => {
+                data.map((item) => {
+                    item = useNode ? item.node : item;
+
                     return (
                         <React.Fragment
                             key={item.id}
@@ -49,6 +52,10 @@ const List = (props) => {
 
 List.propTypes = {
     classes: PropTypes.object.isRequired,
+};
+
+List.defaultProps = {
+    useNode: false,
 };
 
 export default List;

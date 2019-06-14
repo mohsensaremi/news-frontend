@@ -10,4 +10,17 @@ export default withStyles(theme => ({
         color: theme.palette.primary.main,
         textAlign: 'center',
     },
+    subtitle: {
+        marginBottom: theme.spacing.unit,
+        color: theme.palette.primary.main,
+        display: 'flex',
+        alignItems: 'center',
+    },
+    divider: {
+        marginTop: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit * 2,
+    },
+    subtitleIcon: {
+        marginLeft: 4,
+    },
 }), {flip: false});

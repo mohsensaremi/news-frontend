@@ -8,12 +8,18 @@
 
 /*::
 import type { ReaderFragment } from 'relay-runtime';
+type NewsDesignDesign1Relay_data$ref = any;
+type NewsDesignDesign2Relay_data$ref = any;
 type NewsListPaginateRelay_data$ref = any;
 import type { FragmentReference } from "relay-runtime";
 declare export opaque type CategorySingleCategoryRelay_data$ref: FragmentReference;
 declare export opaque type CategorySingleCategoryRelay_data$fragmentType: CategorySingleCategoryRelay_data$ref;
 export type CategorySingleCategoryRelay_data = {|
   +title: string,
+  +topNews: $ReadOnlyArray<?{|
+    +id: string,
+    +$fragmentRefs: NewsDesignDesign1Relay_data$ref & NewsDesignDesign2Relay_data$ref,
+  |}>,
   +$fragmentRefs: NewsListPaginateRelay_data$ref,
   +$refType: CategorySingleCategoryRelay_data$ref,
 |};
@@ -47,6 +53,34 @@ const node/*: ReaderFragment*/ = {
       "storageKey": null
     },
     {
+      "kind": "LinkedField",
+      "alias": null,
+      "name": "topNews",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "News",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "id",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "FragmentSpread",
+          "name": "NewsDesignDesign1Relay_data",
+          "args": null
+        },
+        {
+          "kind": "FragmentSpread",
+          "name": "NewsDesignDesign2Relay_data",
+          "args": null
+        }
+      ]
+    },
+    {
       "kind": "FragmentSpread",
       "name": "NewsListPaginateRelay_data",
       "args": [
@@ -60,5 +94,5 @@ const node/*: ReaderFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '291820e55c1fe28fc7ceec3a49721eaa';
+(node/*: any*/).hash = 'c4f2045b40a260c7f995f2b9b03ddc52';
 module.exports = node;

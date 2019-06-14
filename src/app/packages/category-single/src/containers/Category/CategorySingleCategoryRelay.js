@@ -7,6 +7,11 @@ export default WrappedComponent => (
             first: {type: "Int", defaultValue: 20}
         ) {
             title
+            topNews {
+                id
+                ...NewsDesignDesign1Relay_data
+                ...NewsDesignDesign2Relay_data
+            }
             ...NewsListPaginateRelay_data @arguments(first:$first)
         }
     `
