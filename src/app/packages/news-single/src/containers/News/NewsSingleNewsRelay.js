@@ -4,6 +4,7 @@ export default WrappedComponent => (
     createFragmentContainer(WrappedComponent, {
         data: graphql`
         fragment NewsSingleNewsRelay_data on News {
+            _id
             id
             title
             image

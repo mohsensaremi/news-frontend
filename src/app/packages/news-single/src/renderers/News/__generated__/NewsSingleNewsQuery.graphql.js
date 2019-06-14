@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash c3a41e98594af2d3795d412a95d667da
+ * @relayHash ee54a950918962bca7c37edf86dd58e8
  */
 
 /* eslint-disable */
@@ -36,6 +36,7 @@ query NewsSingleNewsQuery(
 }
 
 fragment NewsSingleNewsRelay_data on News {
+  _id
   id
   title
   image
@@ -107,29 +108,36 @@ v1 = [
 v2 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "id",
+  "name": "_id",
   "args": null,
   "storageKey": null
 },
 v3 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "title",
+  "name": "id",
   "args": null,
   "storageKey": null
 },
 v4 = {
   "kind": "ScalarField",
   "alias": null,
+  "name": "title",
+  "args": null,
+  "storageKey": null
+},
+v5 = {
+  "kind": "ScalarField",
+  "alias": null,
   "name": "abstract",
   "args": null,
   "storageKey": null
 },
-v5 = [
-  (v3/*: any*/),
-  (v2/*: any*/)
+v6 = [
+  (v4/*: any*/),
+  (v3/*: any*/)
 ],
-v6 = {
+v7 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "source",
@@ -137,9 +145,9 @@ v6 = {
   "args": null,
   "concreteType": "NewsSource",
   "plural": false,
-  "selections": (v5/*: any*/)
+  "selections": (v6/*: any*/)
 },
-v7 = {
+v8 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "pubDate",
@@ -189,6 +197,7 @@ return {
         "selections": [
           (v2/*: any*/),
           (v3/*: any*/),
+          (v4/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -210,8 +219,8 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v4/*: any*/),
-          (v6/*: any*/),
+          (v5/*: any*/),
+          (v7/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -226,7 +235,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v7/*: any*/),
+          (v8/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -236,7 +245,7 @@ return {
             "concreteType": "Category",
             "plural": false,
             "selections": [
-              (v2/*: any*/),
+              (v3/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -270,9 +279,9 @@ return {
                         "concreteType": "News",
                         "plural": false,
                         "selections": [
-                          (v2/*: any*/),
                           (v3/*: any*/),
-                          (v6/*: any*/),
+                          (v4/*: any*/),
+                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -281,9 +290,9 @@ return {
                             "args": null,
                             "concreteType": "Category",
                             "plural": false,
-                            "selections": (v5/*: any*/)
+                            "selections": (v6/*: any*/)
                           },
-                          (v4/*: any*/),
+                          (v5/*: any*/),
                           {
                             "kind": "ScalarField",
                             "alias": null,
@@ -291,21 +300,15 @@ return {
                             "args": null,
                             "storageKey": null
                           },
-                          (v7/*: any*/)
+                          (v8/*: any*/)
                         ]
                       }
                     ]
                   }
                 ]
               },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "_id",
-                "args": null,
-                "storageKey": null
-              },
-              (v3/*: any*/)
+              (v2/*: any*/),
+              (v4/*: any*/)
             ]
           }
         ]
@@ -315,7 +318,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "c114b5a7bacb5a85e68e6843584d02eb",
+    "id": "610a291512fb55687b9eaa955bb72edb",
     "text": null,
     "metadata": {}
   }
