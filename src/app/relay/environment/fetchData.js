@@ -19,10 +19,8 @@ const fetchData = (body) => {
         const jsonPromise = response.json();
         return jsonPromise.then(json => {
 
-            console.log("json", json);
             if (Array.isArray(json.errors) && json.errors.length > 0) {
                 if (json.errors[0].extensions.code === "UNAUTHENTICATED" && json.errors[0].message === "jwt expired") {
-                    console.log("json", json);
                     return fetch(process.env.REACT_APP_GRAPHQL_URL, {
                         method: 'POST',
                         headers,
