@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 68b3667afe19191fafb99c534d93ca9f
+ * @relayHash d0ad29451c2d762fd17b8a976d898e01
  */
 
 /* eslint-disable */
@@ -68,7 +68,7 @@ fragment NewsDesignDesign1Relay_data on News {
     id
   }
   abstract
-  link
+  _id
   pubDate
 }
 
@@ -83,7 +83,7 @@ fragment NewsDesignDesign2Relay_data on News {
     id
   }
   abstract
-  link
+  _id
   pubDate
 }
 */
@@ -213,7 +213,7 @@ return {
                   {
                     "kind": "ScalarField",
                     "alias": null,
-                    "name": "link",
+                    "name": "_id",
                     "args": null,
                     "storageKey": null
                   },
@@ -283,7 +283,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsListPaginateMyNewsRelayForwardQuery",
-    "id": "d99d136cd5208d1e82264845c64f9588",
+    "id": "3b66c9ef664083a3ebcef7b9dfb916cb",
     "text": null,
     "metadata": {}
   }

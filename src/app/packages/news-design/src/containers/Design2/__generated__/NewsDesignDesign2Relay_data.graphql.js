@@ -20,7 +20,7 @@ export type NewsDesignDesign2Relay_data = {|
     +title: string
   |},
   +abstract: string,
-  +link: string,
+  +_id: string,
   +pubDate: string,
   +$refType: NewsDesignDesign2Relay_data$ref,
 |};
@@ -81,7 +81,7 @@ return {
     {
       "kind": "ScalarField",
       "alias": null,
-      "name": "link",
+      "name": "_id",
       "args": null,
       "storageKey": null
     },
@@ -96,5 +96,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'd36e4bb50fae0fab926e30b570735dea';
+(node/*: any*/).hash = '2c3ea80fb67a158cad3fba12a858b8a8';
 module.exports = node;

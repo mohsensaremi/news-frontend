@@ -12,7 +12,7 @@ export default WrappedComponent => (
                 title
             }
             abstract
-            link
+            _id
             pubDate
         }
     `

@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import JsxRenderer from 'utils/components/JsxRenderer';
 import {SetGlobalState} from 'packages/global-state';
-import Link from 'utils/components/Link';
 import CategoryCard from '../../containers/CategoryCard';
 import RelatedNews from '../../containers/RelatedNews';
 
@@ -77,9 +76,6 @@ const News = (props) => {
                                                         key={tag}
                                                         variant={"body1"}
                                                         className={classes.tagItem}
-                                                        component={Link}
-                                                        to={`/tags/${tag}`}
-                                                        target={"_blank"}
                                                     >
                                                         {`#${tag}`}
                                                     </Typography>

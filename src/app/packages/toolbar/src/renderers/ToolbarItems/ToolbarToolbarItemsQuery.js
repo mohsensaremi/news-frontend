@@ -6,7 +6,6 @@ export default graphql`
         allCategories {
             _id
             id
-            link
             title
         }
     }

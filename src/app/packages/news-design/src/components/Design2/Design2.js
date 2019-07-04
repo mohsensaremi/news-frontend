@@ -10,14 +10,14 @@ const Design2 = (props) => {
         classes,
         title,
         source,
-        link,
+        _id,
         pubDate,
         category,
         showCategory,
     } = props;
 
     return (
-        <Link to={link} target="_blank">
+        <Link route={"news-single"} params={{id:_id}} target="_blank">
             <Paper className={classes.root}>
                 <Typography className={classes.title}>
                     {title}

@@ -42,17 +42,15 @@ const ToolbarItems = (props) => {
                             <Tab
                                 classes={{
                                     root: classes.tab,
-                                    labelContainer: classes.labelContainer,
                                 }}
                                 value={'home'}
                                 label={'صفحه اصلی'}
                                 component={Link}
-                                to={'/'}
+                                route={'home'}
                             />
                             <Tab
                                 classes={{
                                     root: classes.tab,
-                                    labelContainer: classes.labelContainer,
                                     label: classes.primaryColorLabel,
                                 }}
                                 value={'me'}
@@ -65,13 +63,15 @@ const ToolbarItems = (props) => {
                                         <Tab
                                             classes={{
                                                 root: classes.tab,
-                                                labelContainer: classes.labelContainer,
                                             }}
                                             key={item.id}
                                             value={item._id}
                                             label={item.title}
                                             component={Link}
-                                            href={item.link}
+                                            route={'category'}
+                                            params={{
+                                                id: item._id,
+                                            }}
                                         />
                                     );
                                 })

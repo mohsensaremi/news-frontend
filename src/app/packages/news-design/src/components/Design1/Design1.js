@@ -11,7 +11,7 @@ const Design1 = (props) => {
         title,
         source,
         abstract,
-        link,
+        _id,
         pubDate,
         showPubDate,
         category,
@@ -20,7 +20,7 @@ const Design1 = (props) => {
 
     return (
         <Tooltip title={abstract}>
-            <Link href={link} target="_blank">
+            <Link route={"news-single"} params={{id:_id}} target="_blank">
                 <Paper className={classes.root}>
                     <Typography className={classes.title} noWrap>
                         {title}
