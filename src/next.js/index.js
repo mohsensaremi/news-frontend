@@ -1,3 +1,5 @@
+import router from "../../server/app/router";
+
 const dotenv = require('dotenv');
 const express = require('express');
 const UAParser = require('ua-parser-js');
@@ -5,6 +7,7 @@ const next = require('next');
 const compression = require('compression');
 const routes = require('./routes');
 const SitemapContorller = require('./controllers/SitemapContorller');
+const HomeController = require('./controllers/HomeController');
 
 dotenv.config();
 dotenv.config({
@@ -29,6 +32,8 @@ redisUtils.deleteByPattern(redis, "*").then(() => {
 
         server.get('/sitemap', SitemapContorller.index);
         server.get('/sitemap/:page', SitemapContorller.page);
+
+        server.get('/store-auth-token', HomeController.storeAuthToken);
 
         server.get('/_next/*', (req, res) => {
             /* serving _next static content using next.js handler */
