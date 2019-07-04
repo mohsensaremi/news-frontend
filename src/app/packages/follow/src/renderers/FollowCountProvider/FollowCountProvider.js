@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import query from './FollowFollowCountProviderQuery';
 import {ErrorReload} from 'app/packages/error';
 
@@ -18,7 +18,7 @@ const FollowCountProvider = (props) => {
     return (
         <QueryRenderer
             query={query}
-            environment={environment}
+            environment={getClientEnvironment()}
             variables={{
                 id,
                 type,

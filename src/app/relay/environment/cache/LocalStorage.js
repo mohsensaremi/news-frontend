@@ -1,3 +1,5 @@
+const storageCacheVersion = process.env.STORAGE_CACHE_VERSION;
+
 class LocalStorage {
     constructor(queryId, variables, cacheConfig) {
         this.queryId = queryId;
@@ -12,14 +14,16 @@ class LocalStorage {
                 window.localStorage.getItem(this.cacheKey)
             );
             if (this.cacheConfig.ttl) {
-                const date1 = new Date(cacheValue.createdAt);
-                const timeStamp = Math.round(new Date().getTime() / 1000);
-                const timeStampYesterday = timeStamp - (this.cacheConfig.ttl);
-                const is24 = date1 >= new Date(timeStampYesterday).getTime();
-                if (is24) {
-                    return cacheValue.response;
-                } else {
-                    window.localStorage.removeItem(this.cacheKey);
+                if (cacheValue.version === storageCacheVersion) {
+                    const date1 = new Date(cacheValue.createdAt);
+                    const timeStamp = Math.round(new Date().getTime() / 1000);
+                    const timeStampYesterday = timeStamp - (this.cacheConfig.ttl);
+                    const is24 = date1 >= new Date(timeStampYesterday).getTime();
+                    if (is24) {
+                        return cacheValue.response;
+                    } else {
+                        window.localStorage.removeItem(this.cacheKey);
+                    }
                 }
             } else {
                 return cacheValue.response;
@@ -36,6 +40,7 @@ class LocalStorage {
             window.localStorage.setItem(this.cacheKey, JSON.stringify({
                 response: json,
                 createdAt: Math.round(Date.now() / 1000),
+                version: storageCacheVersion,
             }));
         } catch (e) {
 

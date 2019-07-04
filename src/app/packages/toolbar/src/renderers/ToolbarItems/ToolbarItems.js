@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import query from './ToolbarToolbarItemsQuery';
 import {ErrorReload} from 'app/packages/error';
 import Tabs from '@material-ui/core/Tabs';
@@ -28,7 +28,7 @@ const ToolbarItems = (props) => {
     return (
         <QueryRenderer
             query={query}
-            environment={environment}
+            environment={getClientEnvironment()}
             render={({props, error, retry}) => {
                 if (error) {
                     return (

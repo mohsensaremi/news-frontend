@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import MyNewsContainer from '../../containers/MyNews';
 import query from './MyNewsMyNewsQuery';
 import {ErrorReload} from 'app/packages/error';
@@ -17,7 +17,7 @@ const MyNews = () => {
             />
             <QueryRenderer
                 query={query}
-                environment={environment}
+                environment={getClientEnvironment()}
                 variables={{
                     first: 20,
                 }}

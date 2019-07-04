@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import CategoryContainer from '../../containers/Category';
 import query from './CategorySingleCategoryQuery';
 import {ErrorReload} from 'app/packages/error';
@@ -22,7 +22,7 @@ const Category = (props) => {
             />
             <QueryRenderer
                 query={query}
-                environment={environment}
+                environment={getClientEnvironment()}
                 variables={{
                     id: categoryId,
                     first: 20,

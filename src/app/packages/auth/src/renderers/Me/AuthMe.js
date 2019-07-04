@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer, graphql} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import {SetGlobalState} from 'packages/global-state';
 
 const query = graphql`
@@ -21,7 +21,7 @@ const AuthMe = () => {
             />
             <QueryRenderer
                 query={query}
-                environment={environment}
+                environment={getClientEnvironment()}
                 render={({props}) => {
                     if (props) {
                         return (

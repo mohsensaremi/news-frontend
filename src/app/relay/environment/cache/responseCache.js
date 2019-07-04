@@ -9,7 +9,7 @@ try {
 } catch (e) {
 }
 
-serverStore.forEach(item => {
+serverStore.map(item => {
     cache.set(item.id, item.variables, item.value);
 });
 

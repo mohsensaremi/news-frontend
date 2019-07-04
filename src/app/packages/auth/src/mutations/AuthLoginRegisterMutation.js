@@ -3,7 +3,7 @@ import {
     graphql,
 } from 'react-relay';
 
-import environments from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 
 const mutation = graphql`
     mutation AuthLoginRegisterMutation($email: String!, $password: String!){
@@ -23,7 +23,7 @@ export default (variables) => {
 
     return new Promise((resolve, reject) => {
 
-        commitMutation(environments, {
+        commitMutation(getClientEnvironment(), {
             mutation,
             variables,
             onCompleted: resolve,

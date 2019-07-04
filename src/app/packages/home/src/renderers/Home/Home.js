@@ -1,6 +1,6 @@
 import React from 'react';
 import {QueryRenderer} from 'react-relay';
-import environment from 'app/relay/environment';
+import {getClientEnvironment} from 'app/relay/environment';
 import HomeContainers from '../../containers/Home';
 import query from './HomeHomeQuery';
 import {ErrorReload} from 'app/packages/error';
@@ -17,7 +17,7 @@ const Home = () => {
             />
             <QueryRenderer
                 query={query}
-                environment={environment}
+                environment={getClientEnvironment()}
                 render={({props, error, retry}) => {
                     if (error) {
                         return (
