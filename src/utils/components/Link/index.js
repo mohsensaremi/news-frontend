@@ -18,7 +18,6 @@ export default React.forwardRef((props, ref) => {
             as={as}
             href={href}
             params={params}
-            shalllow
         >
             <a
                 ref={ref}

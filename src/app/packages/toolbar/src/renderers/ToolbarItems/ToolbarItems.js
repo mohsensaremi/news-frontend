@@ -6,6 +6,7 @@ import {ErrorReload} from 'app/packages/error';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Link from 'utils/components/Link';
+import classnames from 'classnames';
 
 const ToolbarItems = (props) => {
 
@@ -50,8 +51,7 @@ const ToolbarItems = (props) => {
                             />
                             <Tab
                                 classes={{
-                                    root: classes.tab,
-                                    label: classes.primaryColorLabel,
+                                    root: classnames(classes.tab, classes.primaryColorLabel),
                                 }}
                                 value={'me'}
                                 label={'اخبار من'}

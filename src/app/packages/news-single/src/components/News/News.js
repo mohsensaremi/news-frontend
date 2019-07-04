@@ -96,7 +96,7 @@ const News = (props) => {
                                     component={"a"}
                                     target={"_blank"}
                                     href={refUrl}
-                                    inline
+                                    display={"inline"}
                                     color={"primary"}
                                 >
                                     {source.title}

@@ -11,7 +11,7 @@ const ErrorReload = (props) => {
 
     return (
         <div className={classes.root}>
-            <Typography inline className={classes.text}>
+            <Typography display={"inline"} className={classes.text}>
                 متاسفانه خطایی رخ داده، لطفاً دوباره تلاش کنید.
             </Typography>
             {
