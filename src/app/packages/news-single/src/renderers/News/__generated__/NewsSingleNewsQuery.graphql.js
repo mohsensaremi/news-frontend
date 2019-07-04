@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d8f19698d802e1403b46e6d8787a5b80
+ * @relayHash 3fa2f2da9a26d5a677e737936c0e0561
  */
 
 /* eslint-disable */
@@ -9,13 +9,14 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
+type NewsSingleHeadRelay_data$ref = any;
 type NewsSingleNewsRelay_data$ref = any;
 export type NewsSingleNewsQueryVariables = {|
   id: string
 |};
 export type NewsSingleNewsQueryResponse = {|
   +newsById: ?{|
-    +$fragmentRefs: NewsSingleNewsRelay_data$ref
+    +$fragmentRefs: NewsSingleNewsRelay_data$ref & NewsSingleHeadRelay_data$ref
   |}
 |};
 export type NewsSingleNewsQuery = {|
@@ -31,6 +32,7 @@ query NewsSingleNewsQuery(
 ) {
   newsById(id: $id) {
     ...NewsSingleNewsRelay_data
+    ...NewsSingleHeadRelay_data
     id
   }
 }
@@ -56,6 +58,23 @@ fragment NewsSingleNewsRelay_data on News {
     ...NewsSingleCategoryCardRelay_data
     id
   }
+}
+
+fragment NewsSingleHeadRelay_data on News {
+  title
+  image
+  content
+  refUrl
+  pubDateISO
+  abstract
+  source {
+    title
+    url
+    logo
+    id
+  }
+  metaKeywords
+  metaDescription
 }
 
 fragment NewsSingleRelatedNewsRelay_data on Category {
@@ -134,27 +153,17 @@ v5 = {
   "args": null,
   "storageKey": null
 },
-v6 = [
-  (v4/*: any*/),
-  (v3/*: any*/)
-],
-v7 = {
-  "kind": "LinkedField",
-  "alias": null,
-  "name": "source",
-  "storageKey": null,
-  "args": null,
-  "concreteType": "NewsSource",
-  "plural": false,
-  "selections": (v6/*: any*/)
-},
-v8 = {
+v6 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "pubDate",
   "args": null,
   "storageKey": null
-};
+},
+v7 = [
+  (v4/*: any*/),
+  (v3/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -176,6 +185,11 @@ return {
           {
             "kind": "FragmentSpread",
             "name": "NewsSingleNewsRelay_data",
+            "args": null
+          },
+          {
+            "kind": "FragmentSpread",
+            "name": "NewsSingleHeadRelay_data",
             "args": null
           }
         ]
@@ -221,7 +235,33 @@ return {
             "storageKey": null
           },
           (v5/*: any*/),
-          (v7/*: any*/),
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "source",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "NewsSource",
+            "plural": false,
+            "selections": [
+              (v4/*: any*/),
+              (v3/*: any*/),
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "url",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "logo",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -236,7 +276,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v8/*: any*/),
+          (v6/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -282,7 +322,16 @@ return {
                         "selections": [
                           (v3/*: any*/),
                           (v4/*: any*/),
-                          (v7/*: any*/),
+                          {
+                            "kind": "LinkedField",
+                            "alias": null,
+                            "name": "source",
+                            "storageKey": null,
+                            "args": null,
+                            "concreteType": "NewsSource",
+                            "plural": false,
+                            "selections": (v7/*: any*/)
+                          },
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -291,11 +340,11 @@ return {
                             "args": null,
                             "concreteType": "Category",
                             "plural": false,
-                            "selections": (v6/*: any*/)
+                            "selections": (v7/*: any*/)
                           },
                           (v5/*: any*/),
                           (v2/*: any*/),
-                          (v8/*: any*/)
+                          (v6/*: any*/)
                         ]
                       }
                     ]
@@ -305,6 +354,27 @@ return {
               (v4/*: any*/),
               (v3/*: any*/)
             ]
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "pubDateISO",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "metaKeywords",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "metaDescription",
+            "args": null,
+            "storageKey": null
           }
         ]
       }
@@ -313,12 +383,12 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "f23bf714fb61a2a993df246ce02d9dac",
+    "id": "2de331528daa3d8e3d839df8b72e4540",
     "text": null,
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'df60c1f0738aeb17b8484b66fcf78d91';
+(node/*: any*/).hash = '04983e5fc0978f7343361d1a2ed3a16e';
 module.exports = node;

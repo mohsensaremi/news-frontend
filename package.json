@@ -34,6 +34,7 @@
     "redux": "^4.0.1",
     "redux-form": "^8.2.0",
     "relay-runtime": "^4.0.0",
+    "sanitize-html": "^1.20.1",
     "sitemap": "^2.2.0",
     "ua-parser-js": "^0.7.20"
   },

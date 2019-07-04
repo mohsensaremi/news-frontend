@@ -2,6 +2,7 @@ import React from 'react';
 import SSRQueryRenderer from 'app/relay/ssr/SSRQueryRenderer';
 import {getClientEnvironment} from 'app/relay/environment';
 import CategoryContainer from '../../containers/Category';
+import Head from '../../containers/Head';
 import query from './CategorySingleCategoryQuery';
 import {ErrorReload} from 'app/packages/error';
 import {SetGlobalState} from "packages/global-state";
@@ -34,10 +35,15 @@ const Category = (props) => {
                         );
                     } else if (props) {
                         return (
-                            <CategoryContainer
-                                categoryId={categoryId}
-                                data={props.categoryById}
-                            />
+                            <React.Fragment>
+                                <Head
+                                    data={props.categoryById}
+                                />
+                                <CategoryContainer
+                                    categoryId={categoryId}
+                                    data={props.categoryById}
+                                />
+                            </React.Fragment>
                         );
                     } else {
                         return (

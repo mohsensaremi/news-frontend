@@ -1,5 +1,4 @@
 import React from 'react';
-import omit from "lodash/omit";
 
 export const getMetaTags = (options={})=>{
 
@@ -12,22 +11,22 @@ export const getMetaTags = (options={})=>{
         {
             key: "keywords",
             name: "keywords",
-            content: "کارناوال,ایرانگردی,مجله گردشگری,طبیعت ایران,آبشار های ایران,اماکن تاریخی ایران,سفرهای تفریحی,سفر های ماجراجویانه و هیجانی,طبیعت گردی,مراکز خرید استانبول,مراکز خرید دبی,راهنمای سفر به,هزینه های سفر,جاذبه های گردشگری,سفر رمانتیک ماه عسل,",
+            content: "خبرجو − آرشیو اخبار ایران و جهان",
         },
         {
             key: "description",
             name: "description",
-            content: "کارناوال : معرفی ، نقد و بررسی جاذبه های گردشگری ایران و جهان  ، سفرنامه و راهنمای سفر ،  تماشای ویدیو و تصاویر با کیفیت از جاذبه های توریستی و طبیعت گردی",
+            content: "خبرجو − آرشیو اخبار ایران و جهان",
         },
         {
             key: "og:title",
             property: "og:title",
-            content: "کارناوال − راهنمای سفر",
+            content: "خبرجو − آرشیو اخبار ایران و جهان",
         },
         {
             key: "og:description",
             property: "og:description",
-            content: "کارناوال : معرفی ، نقد و بررسی جاذبه های گردشگری ایران و جهان  ، سفرنامه و راهنمای سفر ،  تماشای ویدیو و تصاویر با کیفیت از جاذبه های توریستی و طبیعت گردی",
+            content: "خبرجو − آرشیو اخبار ایران و جهان",
         },
         {
             key: "og:image",
@@ -47,12 +46,12 @@ export const getMetaTags = (options={})=>{
         {
             key: "og:site_name",
             property: "og:site_name",
-            content: "کارناوال − راهنمای سفر",
+            content: "خبرجو − آرشیو اخبار ایران و جهان",
         },
         {
             key: "twitter:image:alt",
             name: "twitter:image:alt",
-            content:  "کارناوال − راهنمای سفر",
+            content:  "خبرجو − آرشیو اخبار ایران و جهان",
         },
     ];
 

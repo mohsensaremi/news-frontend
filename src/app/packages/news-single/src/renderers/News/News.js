@@ -2,6 +2,7 @@ import React from 'react';
 import SSRQueryRenderer from 'app/relay/ssr/SSRQueryRenderer';
 import {getClientEnvironment} from 'app/relay/environment';
 import NewsContainers from '../../containers/News';
+import Head from '../../containers/Head';
 import query from './NewsSingleNewsQuery';
 import {ErrorReload} from 'app/packages/error';
 
@@ -25,9 +26,14 @@ const News = (props) => {
                     );
                 } else if (props) {
                     return (
-                        <NewsContainers
-                            data={props.newsById}
-                        />
+                        <React.Fragment>
+                            <Head
+                                data={props.newsById}
+                            />
+                            <NewsContainers
+                                data={props.newsById}
+                            />
+                        </React.Fragment>
                     );
                 } else {
                     return (

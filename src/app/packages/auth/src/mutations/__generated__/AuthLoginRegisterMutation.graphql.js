@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 1b437d981e453aa9422e6d03dc3a30cb
+ * @relayHash 6fad7043e72657488bc31c607e30f49f
  */
 
 /* eslint-disable */
@@ -19,7 +19,7 @@ export type AuthLoginRegisterMutationResponse = {|
       +success: boolean
     |},
     +token: string,
-    +user: {|
+    +user: ?{|
       +email: string
     |},
   |}

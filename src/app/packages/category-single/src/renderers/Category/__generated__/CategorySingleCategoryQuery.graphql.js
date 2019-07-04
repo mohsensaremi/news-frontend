@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 20a219c434e715d46e52a792e3376cb4
+ * @relayHash 33de4faff4ca136e812de922cf7b400b
  */
 
 /* eslint-disable */
@@ -10,13 +10,14 @@
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
 type CategorySingleCategoryRelay_data$ref = any;
+type CategorySingleHeadRelay_data$ref = any;
 export type CategorySingleCategoryQueryVariables = {|
   id: string,
   first: number,
 |};
 export type CategorySingleCategoryQueryResponse = {|
   +categoryById: ?{|
-    +$fragmentRefs: CategorySingleCategoryRelay_data$ref
+    +$fragmentRefs: CategorySingleCategoryRelay_data$ref & CategorySingleHeadRelay_data$ref
   |}
 |};
 export type CategorySingleCategoryQuery = {|
@@ -33,6 +34,7 @@ query CategorySingleCategoryQuery(
 ) {
   categoryById(id: $id) {
     ...CategorySingleCategoryRelay_data_3ASum4
+    ...CategorySingleHeadRelay_data
     id
   }
 }
@@ -45,6 +47,10 @@ fragment CategorySingleCategoryRelay_data_3ASum4 on Category {
     ...NewsDesignDesign2Relay_data
   }
   ...NewsListPaginateRelay_data_3ASum4
+}
+
+fragment CategorySingleHeadRelay_data on Category {
+  title
 }
 
 fragment NewsDesignDesign1Relay_data on News {
@@ -213,6 +219,11 @@ return {
             "kind": "FragmentSpread",
             "name": "CategorySingleCategoryRelay_data",
             "args": (v2/*: any*/)
+          },
+          {
+            "kind": "FragmentSpread",
+            "name": "CategorySingleHeadRelay_data",
+            "args": null
           }
         ]
       }
@@ -347,12 +358,12 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CategorySingleCategoryQuery",
-    "id": "4c8422589f7cfb7506db3de695a5ede4",
+    "id": "60b65cdb01bf73102e956357fb742307",
     "text": null,
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '332457134ae73ce643f96ddbeb8907e2';
+(node/*: any*/).hash = 'e1ef7aa7b45f5462d3d80bb8af34ec94';
 module.exports = node;
