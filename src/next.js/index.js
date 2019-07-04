@@ -4,6 +4,7 @@ const UAParser = require('ua-parser-js');
 const next = require('next');
 const compression = require('compression');
 const routes = require('./routes');
+const SitemapContorller = require('./controllers/SitemapContorller');
 
 dotenv.config();
 dotenv.config({
@@ -24,6 +25,10 @@ redisUtils.deleteByPattern(redis, "*").then(() => {
         const server = express();
 
         server.use(express.static(`${__dirname}/../../../public`));
+
+
+        server.get('/sitemap', SitemapContorller.index);
+        server.get('/sitemap/:page', SitemapContorller.page);
 
         server.get('/_next/*', (req, res) => {
             /* serving _next static content using next.js handler */
