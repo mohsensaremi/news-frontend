@@ -71,7 +71,7 @@ const ToolbarItems = (props) => {
                                             value={item._id}
                                             label={item.title}
                                             component={Link}
-                                            to={item.link}
+                                            href={item.link}
                                         />
                                     );
                                 })

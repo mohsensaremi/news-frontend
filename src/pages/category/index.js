@@ -1,11 +1,11 @@
 import React from 'react';
 import MainLayout from 'app/layouts/MainLayout';
-import News from 'app/packages/news-single/src/renderers/News';
+import Category from 'app/packages/category-single/src/renderers/Category';
 import withData from "app/relay/ssr/withData";
 import query from "app/packages/toolbar/src/renderers/ToolbarItems/ToolbarToolbarItemsQuery";
-import query2 from "app/packages/news-single/src/renderers/News/NewsSingleNewsQuery";
+import query2 from "app/packages/category-single/src/renderers/Category/CategorySingleCategoryQuery";
 
-const NewsSinglePage = (props) => {
+const CategoryPage = (props) => {
 
     const {
         relayVariables
@@ -13,14 +13,14 @@ const NewsSinglePage = (props) => {
 
     return (
         <MainLayout>
-            <News
+            <Category
                 relayVariables={relayVariables[0]}
             />
         </MainLayout>
     );
 };
 
-NewsSinglePage.getInitialProps = async (ctx) => {
+CategoryPage.getInitialProps = async (ctx) => {
 
     const mainLayoutData = await MainLayout.getInitialProps(ctx);
 
@@ -28,15 +28,16 @@ NewsSinglePage.getInitialProps = async (ctx) => {
         relayVariables: [
             {
                 id: ctx.query.id,
+                first: 20,
             },
             mainLayoutData.relayVariables,
         ]
     };
 };
 
-export default withData(NewsSinglePage, {
+export default withData(CategoryPage, {
     query: [query2, query],
     abort404: [
-        (props) => props.newsById === null,
+        (props) => props.categoryById === null,
     ]
 });

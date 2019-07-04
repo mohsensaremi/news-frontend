@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Hidden from '@material-ui/core/Hidden';
 import NewsDesign1 from 'app/packages/news-design/src/containers/Design1';
 import NewsDesign2 from 'app/packages/news-design/src/containers/Design2';
 
@@ -10,6 +9,7 @@ const List = (props) => {
         classes,
         data,
         useNode,
+        isMobile,
     } = props;
 
     return (
@@ -22,25 +22,26 @@ const List = (props) => {
                         <React.Fragment
                             key={item.id}
                         >
-                            <Hidden smDown>
-                                <NewsDesign1
-                                    data={item}
-                                    showPubDate={true}
-                                    showCategory={true}
-                                    classes={{
-                                        root: classes.news,
-                                    }}
-                                />
-                            </Hidden>
-                            <Hidden mdUp>
-                                <NewsDesign2
-                                    data={item}
-                                    showCategory={true}
-                                    classes={{
-                                        root: classes.news,
-                                    }}
-                                />
-                            </Hidden>
+                            {
+                                isMobile?(
+                                    <NewsDesign2
+                                        data={item}
+                                        showCategory={true}
+                                        classes={{
+                                            root: classes.news,
+                                        }}
+                                    />
+                                    ):(
+                                    <NewsDesign1
+                                        data={item}
+                                        showPubDate={true}
+                                        showCategory={true}
+                                        classes={{
+                                            root: classes.news,
+                                        }}
+                                    />
+                                    )
+                            }
 
                         </React.Fragment>
                     );

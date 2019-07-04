@@ -1,5 +1,5 @@
 import React from 'react';
-import {QueryRenderer} from 'react-relay';
+import SSRQueryRenderer from 'app/relay/ssr/SSRQueryRenderer';
 import {getClientEnvironment} from 'app/relay/environment';
 import CategoryContainer from '../../containers/Category';
 import query from './CategorySingleCategoryQuery';
@@ -9,10 +9,11 @@ import {SetGlobalState} from "packages/global-state";
 const Category = (props) => {
 
     const {
-        match,
+        relayVariables,
+        router,
     } = props;
 
-    const categoryId = match.params.id;
+    const categoryId = router.query.id;
 
     return (
         <React.Fragment>
@@ -20,13 +21,10 @@ const Category = (props) => {
                 itemKey={"activeMenu"}
                 itemValue={categoryId}
             />
-            <QueryRenderer
+            <SSRQueryRenderer
                 query={query}
                 environment={getClientEnvironment()}
-                variables={{
-                    id: categoryId,
-                    first: 20,
-                }}
+                variables={relayVariables}
                 render={({props, error, retry}) => {
                     if (error) {
                         return (
