@@ -1,4 +1,4 @@
-import CheckboxGroup from 'util/components/CheckboxGroup';
+import CheckboxGroup from 'utils/components/CheckboxGroup';
 import createComponent from './create-component'
 
 const emptyArray = [];

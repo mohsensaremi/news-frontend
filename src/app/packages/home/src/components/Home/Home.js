@@ -12,7 +12,7 @@ const Home = (props) => {
     return (
         <div className={'limitWidth'}>
             <div className={classes.root}>
-                <Grid container spacing={24}>
+                <Grid container spacing={3}>
                     {
                         data.map(category => {
                             return (

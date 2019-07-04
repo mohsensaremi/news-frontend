@@ -1,5 +1,5 @@
 import React from 'react';
-import RTL from 'util/components/RTL';
+import RTL from 'utils/components/RTL';
 
 const Boot = (props) => {
 

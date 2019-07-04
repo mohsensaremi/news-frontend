@@ -4,8 +4,8 @@ export default withStyles(theme => ({
     titleWrapper: {},
     title: {
         borderBottom: `2px solid ${theme.palette.primary.main}`,
-        paddingLeft: theme.spacing.unit,
+        paddingLeft: theme.spacing(),
         display: 'inline-block',
-        marginBottom: theme.spacing.unit * 3 / 2,
+        marginBottom: theme.spacing(1.5),
     },
 }), {flip: false});

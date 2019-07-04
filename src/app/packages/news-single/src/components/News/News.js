@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import JsxRenderer from 'utils/components/JsxRenderer';
 import {SetGlobalState} from 'packages/global-state';
-import {Link} from "react-router-dom";
+import Link from 'utils/components/Link';
 import CategoryCard from '../../containers/CategoryCard';
 import RelatedNews from '../../containers/RelatedNews';
 
@@ -32,7 +32,7 @@ const News = (props) => {
                 itemValue={category.id}
             />
             <div className={classes.root}>
-                <Grid container spacing={16}>
+                <Grid container spacing={2}>
                     <Grid item xs={12} md={9}>
                         <Paper className={classes.bodyPaper}>
                             <Typography

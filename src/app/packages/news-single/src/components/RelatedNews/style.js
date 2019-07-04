@@ -7,6 +7,6 @@ export default withStyles(theme => ({
         },
     },
     news: {
-        marginBottom: theme.spacing.unit,
+        marginBottom: theme.spacing(),
     },
 }), {flip: false});

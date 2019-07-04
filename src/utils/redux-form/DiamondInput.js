@@ -1,4 +1,4 @@
-import DiamondInput from 'util/components/DiamondInput';
+import DiamondInput from 'utils/components/DiamondInput';
 import createComponent from './create-component';
 import isNumber from 'lodash/isNumber';
 

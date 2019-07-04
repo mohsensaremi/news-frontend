@@ -1,4 +1,4 @@
-import ScoreInput from 'util/components/ScoreInput';
+import ScoreInput from 'utils/components/ScoreInput';
 import createComponent from './create-component';
 import isNumber from 'lodash/isNumber';
 

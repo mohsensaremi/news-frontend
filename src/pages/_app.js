@@ -5,11 +5,13 @@ import {ThemeProvider} from '@material-ui/styles';
 import theme from 'app/themes/theme1';
 import Boot from 'app/boot';
 import {UserAgentProvider} from '@quentin-sommer/react-useragent';
-import {WebpSupportProvider} from 'packages/webp-support';
-import serverData from 'util/util/serverData';
+import serverData from 'utils/utils/serverData';
 import {withReduxStore} from 'app/redux';
 import {Provider} from 'react-redux';
-import {getMetaTagsJsx} from 'util/util/metaTags';
+import {getMetaTagsJsx} from 'utils/utils/metaTags';
+
+import 'app/style/app.scss';
+import 'app/fonts/IRANSansWeb/style.scss';
 
 class MyApp extends App {
     componentDidMount() {

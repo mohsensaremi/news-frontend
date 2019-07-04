@@ -7,7 +7,7 @@ export default withStyles(theme => ({
         },
     },
     news: {
-        marginBottom: theme.spacing.unit * (3 / 2),
+        marginBottom: theme.spacing(1.5),
         [theme.breakpoints.up('md')]: {
             borderRadius: theme.shape.borderRadiusButton,
         },

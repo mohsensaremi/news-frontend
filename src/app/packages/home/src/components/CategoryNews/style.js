@@ -13,7 +13,7 @@ export default withStyles(theme => ({
         height: 410,
     },
     news: {
-        marginBottom: theme.spacing.unit,
+        marginBottom: theme.spacing(),
         borderRadius: theme.shape.borderRadiusButton,
         transition: theme.variables.transition,
         '&:hover': {

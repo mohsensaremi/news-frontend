@@ -2,7 +2,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 export default withStyles(theme => ({
     root: {
-        padding: theme.spacing.unit,
+        padding: theme.spacing(),
     },
     title: {
         fontWeight: 300,
@@ -18,6 +18,6 @@ export default withStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(),
     },
 }), {flip: false});

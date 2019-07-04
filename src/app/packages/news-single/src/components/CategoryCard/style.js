@@ -16,7 +16,7 @@ export default withStyles(theme => ({
         borderRadius: '50%',
         padding: 3,
         marginTop: -35,
-        marginBottom: theme.spacing.unit * -2,
+        marginBottom: theme.spacing(-2),
     },
     avatarBorder: {
         width: 64,
@@ -26,16 +26,16 @@ export default withStyles(theme => ({
         border: `1px solid ${theme.palette.divider}`,
     },
     body: {
-        padding: theme.spacing.unit * 2,
+        padding: theme.spacing(2),
     },
     title: {
         fontSize: 14,
         fontWeight: 'bold',
     },
     button: {
-        padding: `2px ${theme.spacing.unit}px`,
+        padding: `2px ${theme.spacing()}px`,
     },
     followsCount: {
-        marginTop: theme.spacing.unit / 2,
+        marginTop: theme.spacing(0.5),
     },
 }), {flip: false});

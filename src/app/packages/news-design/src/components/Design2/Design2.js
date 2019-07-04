@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
-import {Link} from 'react-router-dom';
+import Link from 'utils/components/Link';
 import Design1 from "../Design1/Design1";
 
 const Design2 = (props) => {

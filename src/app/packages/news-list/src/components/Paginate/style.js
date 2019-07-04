@@ -5,7 +5,7 @@ export default withStyles(theme => ({
         marginRight: 4,
     },
     list: {
-        marginBottom: theme.spacing.unit * 3,
+        marginBottom: theme.spacing(),
     },
     buttonWrapper: {
         textAlign: 'center',

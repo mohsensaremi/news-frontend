@@ -2,7 +2,6 @@ import React from 'react';
 import Document, {Head, Main, NextScript} from 'next/document';
 import {ServerStyleSheets} from '@material-ui/styles';
 import theme from 'app/themes/theme1';
-import {supportWebP} from 'util/util/image';
 import pick from 'lodash/pick';
 
 class MyDocument extends Document {

@@ -43,7 +43,7 @@ let theme = createMuiTheme({
         },
         button: {
             fontSize: 12,
-            fontWeight:'normal'
+            fontWeight: 'normal'
         },
     },
     shape: {
@@ -73,6 +73,9 @@ theme = {
         },
         MuiPaper: {
             elevation: 1,
+        },
+        MuiTypography: {
+            variant: 'body2',
         },
     },
     overrides: {

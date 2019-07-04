@@ -2,8 +2,8 @@ import fetch from 'isomorphic-unfetch';
 import LocalStorageCache from './cache/LocalStorage';
 import cache from './cache/responseCache';
 import persistQueries from 'persisted-queries';
-import nextData from 'util/util/nextData';
-import {objectToQueryStringSorted} from "util/util/string";
+import nextData from 'utils/utils/nextData';
+import {objectToQueryStringSorted} from "utils/utils/string";
 
 export const fetchData = (body, headers) => {
 

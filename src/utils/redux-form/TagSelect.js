@@ -1,4 +1,4 @@
-import TagSelect from 'util/components/TagSelect';
+import TagSelect from 'utils/components/TagSelect';
 import createComponent from './create-component'
 
 const emptyArray = [];

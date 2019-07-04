@@ -3,7 +3,7 @@ import initEnvironment from './createRelayEnvironment';
 import {fetchQuery, ReactRelayContext} from 'react-relay';
 import {RelayServerDataProvider} from 'packages/relay-server-data-provider';
 import {RelayServerResponseProvider} from 'packages/relay-server-response-provider';
-import {objectToQueryStringSorted} from 'util/util/string';
+import {objectToQueryStringSorted} from 'utils/utils/string';
 
 let queryRecords = {};
 

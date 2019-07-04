@@ -46,7 +46,7 @@ const Dialog = (props) => {
             </DialogContent>
             <DialogActions>
                 <Button
-                    href={process.env.REACT_APP_GOOGLE_AUTH_URL}
+                    href={process.env.GOOGLE_AUTH_URL}
                     target={"_blank"}
                     disabled={submitting}
                     color="primary"

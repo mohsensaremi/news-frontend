@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Tooltip from '@material-ui/core/Tooltip';
-import {Link} from 'react-router-dom';
+import Link from 'utils/components/Link';
 
 const Design1 = (props) => {
     const {

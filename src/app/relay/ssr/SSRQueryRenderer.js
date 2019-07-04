@@ -1,7 +1,7 @@
 import React from 'react';
 import {compose} from "recompose";
 import {QueryRenderer} from 'react-relay';
-import {objectToQueryStringSorted} from 'util/util/string';
+import {objectToQueryStringSorted} from 'utils/utils/string';
 import {withRelayServerData} from 'packages/relay-server-data-provider';
 
 const SSRQueryRenderer = (props) => {

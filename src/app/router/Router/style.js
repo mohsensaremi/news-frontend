@@ -18,6 +18,6 @@ export default withStyles({
         },
     },
     toolbar: {
-        marginBottom: theme.spacing.unit * 4,
+        marginBottom: theme.spacing(4),
     },
 });

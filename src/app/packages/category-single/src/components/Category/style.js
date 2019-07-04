@@ -6,19 +6,19 @@ export default withStyles(theme => ({
         margin: 'auto',
     },
     title: {
-        marginBottom: theme.spacing.unit * 2,
+        marginBottom: theme.spacing(2),
         color: theme.palette.primary.main,
         textAlign: 'center',
     },
     subtitle: {
-        marginBottom: theme.spacing.unit,
+        marginBottom: theme.spacing(),
         color: theme.palette.primary.main,
         display: 'flex',
         alignItems: 'center',
     },
     divider: {
-        marginTop: theme.spacing.unit * 2,
-        marginBottom: theme.spacing.unit * 2,
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
     },
     subtitleIcon: {
         marginLeft: 4,

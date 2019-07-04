@@ -1,10 +1,10 @@
 import React from 'react';
-import SeoSchema from 'util/components/SeoSchema';
+import SeoSchema from 'utils/components/SeoSchema';
 import {withRouter} from 'next/router';
-import * as schemaUtil from 'util/util/seo-schema';
+import * as schemaUtil from 'utils/utils/seo-schema';
 import DocHead from 'next/head';
-import {getMetaTagsJsx} from "util/util/metaTags";
-import {objectToQueryStringSorted} from "util/util/string";
+import {getMetaTagsJsx} from "utils/utils/metaTags";
+import {objectToQueryStringSorted} from "utils/utils/string";
 import {withRelayServerData} from "packages/relay-server-data-provider";
 
 const Head = ({router, relayServerData}) => {

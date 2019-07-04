@@ -5,7 +5,7 @@ import query from './ToolbarToolbarItemsQuery';
 import {ErrorReload} from 'app/packages/error';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import {Link} from "react-router-dom";
+import Link from 'utils/components/Link';
 
 const ToolbarItems = (props) => {
 
