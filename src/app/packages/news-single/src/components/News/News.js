@@ -29,7 +29,7 @@ const News = (props) => {
         <div className={'limitWidth'}>
             <SetGlobalState
                 itemKey={"activeMenu"}
-                itemValue={category.id}
+                itemValue={category._id}
             />
             <div className={classes.root}>
                 <Grid container spacing={2}>

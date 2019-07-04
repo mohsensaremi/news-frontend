@@ -18,7 +18,7 @@ export default WrappedComponent => (
             categoriesTitle
             pubDate
             category {
-                id
+                _id
                 ...NewsSingleRelatedNewsRelay_data
                 ...NewsSingleCategoryCardRelay_data
             }
