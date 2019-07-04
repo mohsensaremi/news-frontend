@@ -1,5 +1,3 @@
-import router from "../../server/app/router";
-
 const dotenv = require('dotenv');
 const express = require('express');
 const UAParser = require('ua-parser-js');
