@@ -26,16 +26,16 @@ const CategoryCard = (props) => {
                 </div>
             </div>
             <div className={classes.body}>
-                <FollowCountProvider id={_id} type={"Category"}>
-                    {
-                        ({following, followsCount, follow, unfollow, loading}) => (
-                            <React.Fragment>
-                                <Grid container alignItems={"center"} justify={"space-between"}>
-                                    <Grid item>
-                                        <Typography className={classes.title} variant={"button"}>
-                                            {`اخبار ${title}`}
-                                        </Typography>
-                                    </Grid>
+                <React.Fragment>
+                    <Grid container alignItems={"center"} justify={"space-between"}>
+                        <Grid item>
+                            <Typography className={classes.title} variant={"button"}>
+                                {`اخبار ${title}`}
+                            </Typography>
+                        </Grid>
+                        <FollowCountProvider id={_id} type={"Category"}>
+                            {
+                                ({following, follow, unfollow, loading}) => (
                                     <Grid item>
                                         <Button
                                             variant={following ? "outlined" : "contained"}
@@ -50,18 +50,22 @@ const CategoryCard = (props) => {
                                             }
                                         </Button>
                                     </Grid>
-                                </Grid>
-                                {
-                                    followsCount > 0 && (
-                                        <Typography variant={"caption"} className={classes.followsCount}>
-                                            {`${followsCount} نفر اخبار ${title} را دنبال می ${followsCount === 1 ? "کند" : "کنند"}`}
-                                        </Typography>
-                                    )
-                                }
-                            </React.Fragment>
-                        )
-                    }
-                </FollowCountProvider>
+                                )
+                            }
+                        </FollowCountProvider>
+                    </Grid>
+                    <FollowCountProvider id={_id} type={"Category"}>
+                        {
+                            ({followsCount}) => (
+                                followsCount > 0 && (
+                                    <Typography variant={"caption"} className={classes.followsCount}>
+                                        {`${followsCount} نفر اخبار ${title} را دنبال می ${followsCount === 1 ? "کند" : "کنند"}`}
+                                    </Typography>
+                                )
+                            )
+                        }
+                    </FollowCountProvider>
+                </React.Fragment>
             </div>
         </Paper>
     );

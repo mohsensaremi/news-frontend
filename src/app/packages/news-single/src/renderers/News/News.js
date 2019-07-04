@@ -1,5 +1,5 @@
 import React from 'react';
-import {QueryRenderer} from 'react-relay';
+import SSRQueryRenderer from 'app/relay/ssr/SSRQueryRenderer';
 import {getClientEnvironment} from 'app/relay/environment';
 import NewsContainers from '../../containers/News';
 import query from './NewsSingleNewsQuery';
@@ -8,16 +8,14 @@ import {ErrorReload} from 'app/packages/error';
 const News = (props) => {
 
     const {
-        match,
+        relayVariables,
     } = props;
 
     return (
-        <QueryRenderer
+        <SSRQueryRenderer
             query={query}
             environment={getClientEnvironment()}
-            variables={{
-                id: match.params.id,
-            }}
+            variables={relayVariables}
             render={({props, error, retry}) => {
                 if (error) {
                     return (
