@@ -9,17 +9,23 @@ export default React.forwardRef((props, ref) => {
         params,
         children,
         route,
-        shalllow,
         ...otherProps
     } = props;
 
     return (
-
+        <Link
+            route={route}
+            as={as}
+            href={href}
+            params={params}
+            shalllow
+        >
             <a
                 ref={ref}
                 {...otherProps}
             >
                 {children}
             </a>
+        </Link>
     );
 });

@@ -20,7 +20,7 @@ const Design1 = (props) => {
 
     return (
         <Tooltip title={abstract}>
-            <Link to={link} target="_blank">
+            <Link href={link} target="_blank">
                 <Paper className={classes.root}>
                     <Typography className={classes.title} noWrap>
                         {title}

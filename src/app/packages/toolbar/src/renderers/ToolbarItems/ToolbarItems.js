@@ -1,5 +1,5 @@
 import React from 'react';
-import {QueryRenderer} from 'react-relay';
+import SSRQueryRenderer from 'app/relay/ssr/SSRQueryRenderer';
 import {getClientEnvironment} from 'app/relay/environment';
 import query from './ToolbarToolbarItemsQuery';
 import {ErrorReload} from 'app/packages/error';
@@ -26,7 +26,7 @@ const ToolbarItems = (props) => {
     }
 
     return (
-        <QueryRenderer
+        <SSRQueryRenderer
             query={query}
             environment={getClientEnvironment()}
             render={({props, error, retry}) => {
