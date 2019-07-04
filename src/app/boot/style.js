@@ -1,5 +1,4 @@
 import withStyles from '@material-ui/core/styles/withStyles';
-import theme from "../router/Router/style";
 
 export default withStyles(theme => ({
     '@global': {
