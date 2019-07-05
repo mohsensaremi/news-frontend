@@ -7,6 +7,7 @@ import JsxRenderer from 'utils/components/JsxRenderer';
 import {SetGlobalState} from 'packages/global-state';
 import CategoryCard from '../../containers/CategoryCard';
 import RelatedNews from '../../containers/RelatedNews';
+import classnames from 'classnames';
 
 const News = (props) => {
     const {
@@ -25,7 +26,7 @@ const News = (props) => {
     } = props;
 
     return (
-        <div className={'limitWidth'}>
+        <div className={classnames('limitWidth',classes.limitWidth)}>
             <SetGlobalState
                 itemKey={"activeMenu"}
                 itemValue={category._id}

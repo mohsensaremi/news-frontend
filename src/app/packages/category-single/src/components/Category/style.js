@@ -4,6 +4,10 @@ export default withStyles(theme => ({
     root: {
         maxWidth: theme.variables.maxWidth2,
         margin: 'auto',
+        [theme.breakpoints.down('md')]: {
+            paddingRight: theme.spacing(2),
+            paddingLeft: theme.spacing(2),
+        },
     },
     title: {
         marginBottom: theme.spacing(2),

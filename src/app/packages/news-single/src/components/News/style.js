@@ -1,6 +1,12 @@
 import withStyles from '@material-ui/core/styles/withStyles';
 
 export default withStyles(theme => ({
+    limitWidth: {
+        [theme.breakpoints.down('md')]: {
+            paddingRight: theme.spacing(2),
+            paddingLeft: theme.spacing(2),
+        },
+    },
     title: {},
     date: {
         marginBottom: theme.spacing(),
