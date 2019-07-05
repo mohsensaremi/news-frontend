@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -19,6 +21,8 @@ const Toolbar = (props) => {
         classes,
         openAuthDialog,
         user,
+        isMobile,
+        openDrawer,
     } = props;
 
     const popupState = usePopupState({variant: 'popover', popupId: 'toolbarAuthButtonMenu'});
@@ -37,7 +41,17 @@ const Toolbar = (props) => {
                 <MuiToolbar classes={{
                     root: classes.toolbar,
                 }}>
-                    <ToolbarItems/>
+                    {
+                        isMobile ? (
+                            <IconButton
+                                onClick={openDrawer}
+                            >
+                                <MenuIcon/>
+                            </IconButton>
+                        ) : (
+                            <ToolbarItems/>
+                        )
+                    }
                     <Button
                         variant={user ? "outlined" : "contained"}
                         color={"primary"}

@@ -21,7 +21,7 @@ const ToolbarItems = (props) => {
     const meTabProps = {};
     if (hasUser) {
         meTabProps.component = Link;
-        meTabProps.to = "/me";
+        meTabProps.route = "me";
     } else {
         meTabProps.onClick = openAuthDialog;
     }
