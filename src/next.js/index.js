@@ -25,7 +25,7 @@ redisUtils.deleteByPattern(redis, "*").then(() => {
     app.prepare().then(() => {
         const server = express();
 
-        server.use(express.static(`${__dirname}/../../../public`));
+        server.use(express.static(`${__dirname}/../../public`));
 
 
         server.get('/sitemap', SitemapContorller.index);
