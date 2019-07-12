@@ -15,7 +15,7 @@ const SSRQueryRenderer = (props) => {
         const varsStr = objectToQueryStringSorted(props.variables || {});
         const query = props.query();
         const key = `${query.operation.name}?${varsStr}`;
-        const data = relayServerData[key];
+        const data = relayServerData && relayServerData[key];
 
         if (data) {
             return props.render({props: data});

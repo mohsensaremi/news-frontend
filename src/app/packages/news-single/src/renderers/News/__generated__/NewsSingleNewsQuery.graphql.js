@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 3fa2f2da9a26d5a677e737936c0e0561
+ * @relayHash e6f35d71c7f4c463397d3636c51b9213
  */
 
 /* eslint-disable */
@@ -67,7 +67,7 @@ fragment NewsSingleHeadRelay_data on News {
   refUrl
   pubDateISO
   abstract
-  source {
+  newsSource: source {
     title
     url
     logo
@@ -153,17 +153,27 @@ v5 = {
   "args": null,
   "storageKey": null
 },
-v6 = {
+v6 = [
+  (v4/*: any*/),
+  (v3/*: any*/)
+],
+v7 = {
+  "kind": "LinkedField",
+  "alias": null,
+  "name": "source",
+  "storageKey": null,
+  "args": null,
+  "concreteType": "NewsSource",
+  "plural": false,
+  "selections": (v6/*: any*/)
+},
+v8 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "pubDate",
   "args": null,
   "storageKey": null
-},
-v7 = [
-  (v4/*: any*/),
-  (v3/*: any*/)
-];
+};
 return {
   "kind": "Request",
   "fragment": {
@@ -235,33 +245,7 @@ return {
             "storageKey": null
           },
           (v5/*: any*/),
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "source",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "NewsSource",
-            "plural": false,
-            "selections": [
-              (v4/*: any*/),
-              (v3/*: any*/),
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "url",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "logo",
-                "args": null,
-                "storageKey": null
-              }
-            ]
-          },
+          (v7/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -276,7 +260,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v6/*: any*/),
+          (v8/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -322,16 +306,7 @@ return {
                         "selections": [
                           (v3/*: any*/),
                           (v4/*: any*/),
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "name": "source",
-                            "storageKey": null,
-                            "args": null,
-                            "concreteType": "NewsSource",
-                            "plural": false,
-                            "selections": (v7/*: any*/)
-                          },
+                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -340,11 +315,11 @@ return {
                             "args": null,
                             "concreteType": "Category",
                             "plural": false,
-                            "selections": (v7/*: any*/)
+                            "selections": (v6/*: any*/)
                           },
                           (v5/*: any*/),
                           (v2/*: any*/),
-                          (v6/*: any*/)
+                          (v8/*: any*/)
                         ]
                       }
                     ]
@@ -361,6 +336,33 @@ return {
             "name": "pubDateISO",
             "args": null,
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": "newsSource",
+            "name": "source",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "NewsSource",
+            "plural": false,
+            "selections": [
+              (v4/*: any*/),
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "url",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "logo",
+                "args": null,
+                "storageKey": null
+              },
+              (v3/*: any*/)
+            ]
           },
           {
             "kind": "ScalarField",
@@ -383,7 +385,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "NewsSingleNewsQuery",
-    "id": "2de331528daa3d8e3d839df8b72e4540",
+    "id": "d6ba1ddfa712d84090d1cc64eea39095",
     "text": null,
     "metadata": {}
   }

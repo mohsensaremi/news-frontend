@@ -18,7 +18,7 @@ export type NewsSingleHeadRelay_data = {|
   +refUrl: string,
   +pubDateISO: string,
   +abstract: string,
-  +source: {|
+  +newsSource: {|
     +title: string,
     +url: string,
     +logo: string,
@@ -88,7 +88,7 @@ return {
     },
     {
       "kind": "LinkedField",
-      "alias": null,
+      "alias": "newsSource",
       "name": "source",
       "storageKey": null,
       "args": null,
@@ -130,5 +130,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'a4c3082905fcbfe1685b811034208717';
+(node/*: any*/).hash = 'b5a8c0992b5aae39f691cc4979de01de';
 module.exports = node;

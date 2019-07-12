@@ -10,7 +10,7 @@ export default WrappedComponent => (
             refUrl
             pubDateISO
             abstract
-            source {
+            newsSource:source {
                 title
                 url
                 logo

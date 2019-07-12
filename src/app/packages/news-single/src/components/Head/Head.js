@@ -18,12 +18,13 @@ const Head = (props) => {
         allowedTags: [],
     });
 
+
     const publisher = {
         "@type": "Organization",
-        "@id": news.source.url,
-        "url": news.source.url,
-        "name": news.source.title,
-        "logo": news.source.logo,
+        "@id": news.newsSource.url,
+        "url": news.newsSource.url,
+        "name": news.newsSource.title,
+        "logo": news.newsSource.logo,
     };
 
     const schema= {
