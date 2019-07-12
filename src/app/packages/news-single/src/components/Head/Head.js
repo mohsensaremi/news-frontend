@@ -7,7 +7,7 @@ import {getMetaTagsJsx} from "utils/utils/metaTags";
 const Head = (props) => {
     const {
         router,
-        data:news,
+        data: news,
     } = props;
 
     const fullUrl = `${process.env.PUBLIC_URL}${router.asPath}`;
@@ -24,43 +24,47 @@ const Head = (props) => {
         "@id": news.newsSource.url,
         "url": news.newsSource.url,
         "name": news.newsSource.title,
-        "logo": news.newsSource.logo,
+        "logo": {
+            "@type": "ImageObject",
+            "url": news.newsSource.logo,
+            "width": 256,
+        },
     };
 
-    const schema= {
+    const schema = {
         "@context": "http://schema.org",
-            "@type": "NewsArticle",
-            "@id": fullUrl,
-            "url": fullUrl,
-            "image": news.image,
-            "articleBody": bodyText,
-            "wordCount": bodyText.split('-').length,
-            "sameAs": news.refUrl,
-            "datePublished": news.pubDateISO,
-            "dateModified": news.pubDateISO,
-            "mainEntityOfPage": abstractText,
-            "headline": news.title,
-            "publisher": publisher,
-            "author": publisher,
+        "@type": "NewsArticle",
+        "@id": fullUrl,
+        "url": fullUrl,
+        "image": news.image,
+        "articleBody": bodyText,
+        "wordCount": bodyText.split('-').length,
+        "sameAs": news.refUrl,
+        "datePublished": news.pubDateISO,
+        "dateModified": news.pubDateISO,
+        "mainEntityOfPage": abstractText,
+        "headline": news.title,
+        "publisher": publisher,
+        "author": publisher,
     };
 
     const metaTags = {
-        "keywords":{
+        "keywords": {
             key: "keywords",
             property: "keywords",
             content: news.metaKeywords,
         },
-        "description":{
+        "description": {
             key: "description",
             property: "description",
             content: news.metaDescription,
         },
-        "og:title":{
+        "og:title": {
             key: "og:title",
             property: "og:title",
             content: news.title,
         },
-        "og:description":{
+        "og:description": {
             key: "og:description",
             property: "og:description",
             content: news.metaDescription,
