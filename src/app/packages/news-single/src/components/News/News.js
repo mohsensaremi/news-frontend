@@ -26,7 +26,7 @@ const News = (props) => {
     } = props;
 
     return (
-        <div className={classnames('limitWidth',classes.limitWidth)}>
+        <div className={classnames('limitWidth', classes.limitWidth)}>
             <SetGlobalState
                 itemKey={"activeMenu"}
                 itemValue={category._id}
@@ -64,7 +64,8 @@ const News = (props) => {
                                 className={classes.image}
                             />
                             <JsxRenderer
-                                jsx={`<div className="${classes.content}">${content}</div>`}
+                                className={classes.content}
+                                jsx={content}
                             />
                             {
                                 tagsTitle.length > 0 && (
