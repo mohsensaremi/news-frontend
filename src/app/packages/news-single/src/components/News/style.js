@@ -25,6 +25,9 @@ export default withStyles(theme => ({
         fontFamily: theme.typography.fontFamily,
         textAlign: 'justify',
         ...theme.typography.body1,
+        '& img': {
+            maxWidth: '100%',
+        },
         '& *': {
             fontFamily: theme.typography.fontFamily,
             ...theme.typography.body1,
